@@ -19,6 +19,13 @@ public class Weapon : ScriptableObject
 
     public float bulletSpeed;
 
+    public float bulletSpread = 0;
+
+    public int bulletAmount = 1;
+    public float bulletCooldown = 0;
+
+    public bool countMultipleShoots;
+
 
     void Start()
     {

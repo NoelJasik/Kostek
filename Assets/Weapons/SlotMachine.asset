@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b88f1bddf161ff54f949cd671e684ae1, type: 3}
-  m_Name: Shotgun
+  m_Name: SlotMachine
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4515886340233149114, guid: 785fe447ba3c8e347b93af7257dc4384, type: 3}
+  bullet: {fileID: 4515886340233149114, guid: 1b9c4a7e4bde21141813151438f58bab, type: 3}
   barrelPos: {x: 0.99, y: 0}
-  shootCoolDown: 0.25
-  reloadCooldown: 1
-  weaponSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  maxAmmo: 2
-  bulletSpeed: 800
-  bulletSpread: 25
-  bulletAmount: 2
-  bulletCooldown: 0
+  shootCoolDown: 0.85
+  reloadCooldown: 2
+  weaponSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  maxAmmo: 3
+  bulletSpeed: 1000
+  bulletSpread: 30
+  bulletAmount: 3
+  bulletCooldown: 0.05

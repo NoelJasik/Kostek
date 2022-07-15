@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class WeaponHandler : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI ammoCounter;
     [SerializeField]
     Weapon[] weapons;
 
@@ -11,6 +14,8 @@ public class WeaponHandler : MonoBehaviour
     SpriteRenderer weaponSpriteRenderer;
     [SerializeField]
     Transform barrel;
+
+    public bool canShoot;
 
     public Weapon currentWeapon;
 
@@ -27,7 +32,7 @@ public class WeaponHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     ApplyWeapon(weapons[0]);
+     RollGun();
     }
     void ApplyWeapon(Weapon _weaponToApply)
     {
@@ -52,24 +57,53 @@ public class WeaponHandler : MonoBehaviour
             reloading = false;
         }
         currentShootCooldown -= Time.deltaTime;
-        if(Input.GetButton("Fire1") && currentShootCooldown <= 0 && currentAmmo > 0)
+        if(canShoot)
+        {
+            weaponSpriteRenderer.enabled = true;
+            ammoCounter.text = currentAmmo.ToString() + "/" + currentWeapon.maxAmmo.ToString();
+            if(Input.GetButton("Fire1") && currentShootCooldown <= 0 && currentAmmo > 0)
         {
             Shoot();
         } else 
         if((Input.GetButton("Fire1") && currentAmmo <= 0 && !reloading) || (Input.GetButton("Reload") && !reloading))
         {
             Reload();
+        } 
+        } else {
+            weaponSpriteRenderer.enabled = false;
         }
+        
+       
+    }
+    public void RollGun()
+    {
+        ApplyWeapon(weapons[Random.Range(0, weapons.Length)]);
     }
 
     void Shoot()
     { 
        Debug.Log("Bam!");
        currentShootCooldown = currentWeapon.shootCoolDown;
+       for (int i = 0; i < currentWeapon.bulletAmount; i++)
+       {
+        Invoke("Fire", i * currentWeapon.bulletCooldown);
+       }
+       if(!currentWeapon.countMultipleShoots)
+       {
+           currentAmmo--; 
+       }
+       
+    }
+    void Fire()
+    {
+       barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
        GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
-       bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * transform.right);
-       Destroy(bullet, 5f);
-       currentAmmo--;
+       bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
+       Destroy(bullet, 3f);   
+        if(currentWeapon.countMultipleShoots)
+       {
+           currentAmmo--; 
+       }
     }
     void Reload()
     { 

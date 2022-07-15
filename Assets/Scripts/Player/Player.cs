@@ -77,6 +77,7 @@ public class Player : MonoBehaviour
 
 
     [Header("Dashing")]
+    WeaponHandler weaponHandler;
    
     private Vector3 MoveDirection;
     [SerializeField]
@@ -104,6 +105,7 @@ public class Player : MonoBehaviour
         // }
         bc = GetComponent<BoxCollider2D>();
         Rb = GetComponent<Rigidbody2D>();
+        weaponHandler = FindObjectOfType<WeaponHandler>();
     }
 
     // Update is called once per frame
@@ -145,14 +147,13 @@ public class Player : MonoBehaviour
         MoveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (Timer >= 0.20f)
         {
-
-
             Physics2D.IgnoreLayerCollision(18, 9, false);
             CanMove = true;
            // DashEffect.Stop();
         }
         if (Timer >= 0.22f && !oneTime)
         {
+             weaponHandler.canShoot = true;
             Rb.velocity = new Vector2(Rb.velocity.x / 2, Rb.velocity.y / 2);
             Rb.gravityScale = 1f;
             regainDashTimer = 0f;
@@ -191,7 +192,8 @@ public class Player : MonoBehaviour
             {
                 Physics2D.IgnoreLayerCollision(18, 9, true);
             }
-
+            weaponHandler.canShoot = false;
+            weaponHandler.RollGun();
             Rb.gravityScale = 0f;
             oneTime = false;
             blockAnim = false;
