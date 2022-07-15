@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class WeaponHandler : MonoBehaviour
@@ -28,52 +29,64 @@ public class WeaponHandler : MonoBehaviour
 
     bool reloading = false;
 
+    [SerializeField]
+    Slider reloadCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-     RollGun();
+        RollGun();
+        reloadCounter.gameObject.SetActive(false);
     }
     void ApplyWeapon(Weapon _weaponToApply)
     {
-       currentWeapon = _weaponToApply;
-       weaponSpriteRenderer.sprite = currentWeapon.weaponSprite;
-       currentAmmo = currentWeapon.maxAmmo;
-       currentReloadCooldown = currentWeapon.reloadCooldown;
-       currentShootCooldown = currentWeapon.shootCoolDown;
-       barrel.localPosition = currentWeapon.barrelPos;
+        currentWeapon = _weaponToApply;
+        weaponSpriteRenderer.sprite = currentWeapon.weaponSprite;
+        currentAmmo = currentWeapon.maxAmmo;
+        currentReloadCooldown = currentWeapon.reloadCooldown;
+        currentShootCooldown = currentWeapon.shootCoolDown;
+        barrel.localPosition = currentWeapon.barrelPos;
+        reloadCounter.maxValue = currentWeapon.reloadCooldown;
+        reloadCounter.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(reloading)
+        if (reloading)
         {
-             currentReloadCooldown -= Time.deltaTime;
-        } if(currentReloadCooldown <= 0 && reloading)
+            currentReloadCooldown += Time.deltaTime;
+            reloadCounter.value = currentReloadCooldown;
+            reloadCounter.gameObject.SetActive(true);
+        }
+        if (currentReloadCooldown >= currentWeapon.reloadCooldown && reloading)
         {
             currentAmmo = currentWeapon.maxAmmo;
-            currentReloadCooldown = currentWeapon.reloadCooldown;
+            reloadCounter.gameObject.SetActive(false);
+            currentReloadCooldown = 0;
             reloading = false;
         }
         currentShootCooldown -= Time.deltaTime;
-        if(canShoot)
+        if (canShoot)
         {
             weaponSpriteRenderer.enabled = true;
             ammoCounter.text = currentAmmo.ToString() + "/" + currentWeapon.maxAmmo.ToString();
-            if(Input.GetButton("Fire1") && currentShootCooldown <= 0 && currentAmmo > 0)
+            if (Input.GetButton("Fire1") && currentShootCooldown <= 0 && currentAmmo > 0)
+            {
+                Shoot();
+            }
+            else
+        if ((Input.GetButton("Fire1") && currentAmmo <= 0 && !reloading) || (Input.GetButton("Reload") && !reloading))
+            {
+                Reload();
+            }
+        }
+        else
         {
-            Shoot();
-        } else 
-        if((Input.GetButton("Fire1") && currentAmmo <= 0 && !reloading) || (Input.GetButton("Reload") && !reloading))
-        {
-            Reload();
-        } 
-        } else {
             weaponSpriteRenderer.enabled = false;
         }
-        
-       
+
+
     }
     public void RollGun()
     {
@@ -81,33 +94,33 @@ public class WeaponHandler : MonoBehaviour
     }
 
     void Shoot()
-    { 
-       Debug.Log("Bam!");
-       currentShootCooldown = currentWeapon.shootCoolDown;
-       for (int i = 0; i < currentWeapon.bulletAmount; i++)
-       {
-        Invoke("Fire", i * currentWeapon.bulletCooldown);
-       }
-       if(!currentWeapon.countMultipleShoots)
-       {
-           currentAmmo--; 
-       }
-       
+    {
+        Debug.Log("Bam!");
+        currentShootCooldown = currentWeapon.shootCoolDown;
+        for (int i = 0; i < currentWeapon.bulletAmount; i++)
+        {
+            Invoke("Fire", i * currentWeapon.bulletCooldown);
+        }
+        if (!currentWeapon.countMultipleShoots)
+        {
+            currentAmmo--;
+        }
+
     }
     void Fire()
     {
-       barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
-       GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
-       bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
-       Destroy(bullet, 3f);   
-        if(currentWeapon.countMultipleShoots)
-       {
-           currentAmmo--; 
-       }
+        barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
+        GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
+        bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
+        Destroy(bullet, 3f);
+        if (currentWeapon.countMultipleShoots)
+        {
+            currentAmmo--;
+        }
     }
     void Reload()
-    { 
-       reloading = true;
-       Debug.Log("Reloading");
+    {
+        reloading = true;
+        Debug.Log("Reloading");
     }
 }

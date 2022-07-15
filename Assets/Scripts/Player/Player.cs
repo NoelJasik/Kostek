@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -74,6 +75,8 @@ public class Player : MonoBehaviour
     // GameObject footSteps;
 //  [SerializeField]
 //     ParticleSystem DashEffect;
+[SerializeField]
+Slider dashSlider;
 
 
     [Header("Dashing")]
@@ -114,6 +117,7 @@ public class Player : MonoBehaviour
         if (Time.timeScale == 1 && CanMove)
         {
             Walking();
+            dashSlider.maxValue = DashTimer;
         }
 
     }
@@ -171,12 +175,14 @@ public class Player : MonoBehaviour
             {
                 regainDashTimer += Time.deltaTime;
             }
-
+               dashSlider.gameObject.SetActive(true);
+               dashSlider.value = regainDashTimer;
             // DashBar.SetActive(true);
             // DashBarFill.localScale = new Vector3(regainDashTimer * AmountToMultplyRSToBeOne, 1, 1);
         }
         else
         {
+            dashSlider.gameObject.SetActive(false);
             // DashBar.SetActive(false);
         }
         if (regainDashTimer >= DashTimer && !Recharged)
