@@ -8,6 +8,7 @@ public class DiceRolling : MonoBehaviour
     public List<int> levelList;
     LevelManager levelManager;
     bool beated = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,12 +37,18 @@ public class DiceRolling : MonoBehaviour
             {
                 levelList.Add(i);
             }
-
         }
         if (beated == false)
         {
             levelManager.LoadSpecificLevel(0);
             beated = true;
+        }
+    }
+    public void resetLevelData()
+    {
+        for (int i = 1; i <= 6; i++)
+        {
+            PlayerPrefs.SetString(i + " has been beaten", "false");
         }
     }
 

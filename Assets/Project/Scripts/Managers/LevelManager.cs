@@ -13,7 +13,10 @@ float transitionTime = 1f;
 public void Awake()
 {
     transition.gameObject.SetActive(true);
-    Time.timeScale = 0f;
+    if(SceneManager.GetActiveScene().buildIndex != 0)
+    {
+Time.timeScale = 0f;
+    }
 }
 
     public void LoadSpecificLevel(int levelToLoad)
