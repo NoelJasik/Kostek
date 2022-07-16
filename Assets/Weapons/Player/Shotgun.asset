@@ -13,12 +13,15 @@ MonoBehaviour:
   m_Name: Shotgun
   m_EditorClassIdentifier: 
   bullet: {fileID: 4515886340233149114, guid: 785fe447ba3c8e347b93af7257dc4384, type: 3}
-  barrelPos: {x: 0.99, y: 0}
+  barrelPos: {x: 0.901, y: 0.015}
   shootCoolDown: 0.25
   reloadCooldown: 1
-  weaponSprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  weaponSprite: {fileID: -129821918, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  shootSprite: {fileID: -2029325104, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  reloadSprite: {fileID: -129821918, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
   maxAmmo: 2
   bulletSpeed: 800
   bulletSpread: 25
   bulletAmount: 2
   bulletCooldown: 0
+  countMultipleShoots: 0

@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Whisky
   m_EditorClassIdentifier: 
   bullet: {fileID: 4515886340233149114, guid: 3bbdd2c2861632b459094fc3f37a161f, type: 3}
-  barrelPos: {x: 0.99, y: 0}
+  barrelPos: {x: 0.901, y: 0.015}
   shootCoolDown: 0.1
   reloadCooldown: 0.5
-  weaponSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  weaponSprite: {fileID: -332498846, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  shootSprite: {fileID: -551234557, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  reloadSprite: {fileID: -332498846, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
   maxAmmo: 4
   bulletSpeed: 1000
   bulletSpread: 10
