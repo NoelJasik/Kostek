@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88f1bddf161ff54f949cd671e684ae1, type: 3}
   m_Name: EnemyGun
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4515886340233149114, guid: 1b9c4a7e4bde21141813151438f58bab, type: 3}
+  bullet: {fileID: 4515886340233149114, guid: dbf1ac1100a4ce84fb170da628b8422a, type: 3}
   barrelPos: {x: 0.99, y: 0}
-  shootCoolDown: 0.25
+  shootCoolDown: 1
   reloadCooldown: 1.25
   weaponSprite: {fileID: 21300000, guid: 017ba3c108d78fe409a528d2206be531, type: 3}
   maxAmmo: 1
-  bulletSpeed: 1000
+  bulletSpeed: 700
+  bulletSpread: 10
+  bulletAmount: 1
+  bulletCooldown: 0
+  countMultipleShoots: 0
