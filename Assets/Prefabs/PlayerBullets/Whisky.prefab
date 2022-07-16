@@ -89,7 +89,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04907781, y: -0.0016125441}
+  m_Offset: {x: 0.12756476, y: 0.015994921}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -100,7 +100,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.28216946, y: 0.24491441}
+  m_Size: {x: 0.11972648, y: 0.28012934}
   m_EdgeRadius: 0
 --- !u!1 &6372084098720908711
 GameObject:
@@ -112,7 +112,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6236237943033069852}
   - component: {fileID: 7534102640191763236}
-  - component: {fileID: 5904764271761992013}
   m_Layer: 10
   m_Name: BulletSprite
   m_TagString: Untagged
@@ -176,9 +175,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1785856853, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  m_Sprite: {fileID: 729327673, guid: 68cb7538964314e42a23935d356859e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -187,23 +186,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5904764271761992013
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6372084098720908711}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b574e25ecf755b43acefce698263f1f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0

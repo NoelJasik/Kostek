@@ -16,9 +16,9 @@ MonoBehaviour:
   barrelPos: {x: 0.901, y: 0.015}
   shootCoolDown: 0.1
   reloadCooldown: 0.5
-  weaponSprite: {fileID: -332498846, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
-  shootSprite: {fileID: -551234557, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
-  reloadSprite: {fileID: -332498846, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  weaponSprite: {fileID: -606837321, guid: 68cb7538964314e42a23935d356859e5, type: 3}
+  shootSprite: {fileID: -2129608378, guid: 68cb7538964314e42a23935d356859e5, type: 3}
+  reloadSprite: {fileID: -606837321, guid: 68cb7538964314e42a23935d356859e5, type: 3}
   maxAmmo: 4
   bulletSpeed: 1000
   bulletSpread: 10
