@@ -109,13 +109,16 @@ public class WeaponHandler : MonoBehaviour
     }
     void Fire()
     {
-        barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
-        GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
-        Destroy(bullet, 3f);
-        if (currentWeapon.countMultipleShoots)
+        if (canShoot)
         {
-            currentAmmo--;
+            barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
+            GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
+            bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
+            Destroy(bullet, 3f);
+            if (currentWeapon.countMultipleShoots)
+            {
+                currentAmmo--;
+            }
         }
     }
     void Reload()

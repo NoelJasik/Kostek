@@ -39,7 +39,8 @@ public class Health : MonoBehaviour
             gameObject.SetActive(false);
             if(createdDeathParticle == false)
             {
-                Instantiate(deathParticle, transform.position, transform.rotation);
+               GameObject deathP = Instantiate(deathParticle, transform.position, transform.rotation);
+               deathP.GetComponentInChildren<SpriteRenderer>().flipX = playerSpriteRenderer.flipX;
             levelManager.LoadSpecificLevel(0);
             createdDeathParticle = true;
             }
