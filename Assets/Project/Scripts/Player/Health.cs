@@ -20,9 +20,11 @@ public class Health : MonoBehaviour
     [SerializeField]
     LevelManager levelManager;
     bool createdDeathParticle = false;
+    WeaponHandler weaponHandler;
     // Start is called before the first frame update
     void Start()
     {
+        weaponHandler = FindObjectOfType<WeaponHandler>();
         currentHealth = MaxHealth;
         levelManager = FindObjectOfType<LevelManager>();
     }
@@ -80,6 +82,7 @@ void flash()
     {
      if(canDamage)
      {
+        weaponHandler.killStreak = 0;
         for (int i = 0; i < MaxHealth; i++)
         {
             if(i + 1 < currentHealth)
@@ -90,6 +93,7 @@ void flash()
                 hearts[i].SetActive(false);
             }
         }
+        
         natural = true;
         currentHealth--;
         noHitTimer = 0.4f;

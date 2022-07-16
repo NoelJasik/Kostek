@@ -19,10 +19,12 @@ public class Bullet : MonoBehaviour
     bool penetrate;
     [SerializeField]
     GameObject hitEffect;
+  
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -35,16 +37,19 @@ public class Bullet : MonoBehaviour
                {
                  Debug.Log("Destroy");
                  other.GetComponent<EnemyHeart>().Damage(damageToDeal);
+                
                  Destroy(gameObject, 0.01f);
                } 
                if(bounce)
                {
                  Debug.Log("Bounce");
+
                  other.GetComponent<EnemyHeart>().Damage(damageToDeal);
                     rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
                     bounceAmount--;
                } else if(penetrate)
                {
+
                       other.GetComponent<EnemyHeart>().Damage(damageToDeal);
                }
         }

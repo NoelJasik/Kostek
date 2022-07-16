@@ -9,6 +9,7 @@ public class EnemyHeart : MonoBehaviour
     {
         if(health <= 0)
         {
+            FindObjectOfType<WeaponHandler>().killStreak++;
             Destroy(gameObject);
         }
     }

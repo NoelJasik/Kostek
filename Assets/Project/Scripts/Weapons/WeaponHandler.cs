@@ -95,6 +95,7 @@ public class WeaponHandler : MonoBehaviour
     Slider reloadCounter;
     [SerializeField]
     Player player;
+    public int killStreak;
 
     // Start is called before the first frame update
     void Awake()
@@ -210,7 +211,9 @@ public class WeaponHandler : MonoBehaviour
             barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
             GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
-            Destroy(bullet, 3f);
+            
+            
+            Destroy(bullet, 6f);
             if (currentWeapon.countMultipleShoots)
             {
                 currentAmmo--;
