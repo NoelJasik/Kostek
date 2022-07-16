@@ -15,6 +15,10 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     int damageToDeal;
     Rigidbody2D rb;
+    [SerializeField]
+    bool penetrate;
+    [SerializeField]
+    GameObject hitEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,8 @@ public class Bullet : MonoBehaviour
         Debug.Log("hit");
         if(other.tag == enemyTag)
         {
-            if(!bounce || bounceAmount <= 0)
+           Instantiate(hitEffect, transform.position, transform.rotation);
+            if((!bounce || bounceAmount <= 0) && !penetrate)
                {
                  Debug.Log("Destroy");
                  other.GetComponent<EnemyHeart>().Damage(damageToDeal);
@@ -38,14 +43,18 @@ public class Bullet : MonoBehaviour
                  other.GetComponent<EnemyHeart>().Damage(damageToDeal);
                     rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
                     bounceAmount--;
+               } else if(penetrate)
+               {
+                      other.GetComponent<EnemyHeart>().Damage(damageToDeal);
                }
         }
         for (int i = 0; i < destroyers.Count; i++)
         {
             if(other.tag == destroyers[i])
             {
+               Instantiate(hitEffect, transform.position, transform.rotation);
                 Debug.Log("Registered a Hit");
-               if(!bounce || bounceAmount <= 0)
+               if((!bounce || bounceAmount <= 0) && !penetrate)
                {
                  Debug.Log("Destroy");
                  Destroy(gameObject, 0.01f);

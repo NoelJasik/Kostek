@@ -75,6 +75,8 @@ MonoBehaviour:
   bounce: 0
   bounceAmount: 0
   damageToDeal: 15
+  penetrate: 0
+  hitEffect: {fileID: 5172423386784939174, guid: 07aecd5343819b1469eec331cd828e41, type: 3}
 --- !u!61 &7592422618524149511
 BoxCollider2D:
   m_ObjectHideFlags: 0

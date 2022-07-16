@@ -13,6 +13,8 @@ public class Aimer : MonoBehaviour
     Transform playerPos;
     [SerializeField]
     SpriteRenderer playerSr;
+    [SerializeField]
+    SpriteRenderer gunSr;
 
     void Start()
     {
@@ -28,12 +30,14 @@ public class Aimer : MonoBehaviour
         transform.position = playerPos.position;
         if(angle < 90 && angle > -90)
         {
-            playerSr.flipX = false;
+            ShouldFlip = false;
         }
          else
          {
-            playerSr.flipX = true;
+            ShouldFlip = true;
          }
+         playerSr.flipX = ShouldFlip;
+         gunSr.flipY = ShouldFlip;
     }
 
 }
