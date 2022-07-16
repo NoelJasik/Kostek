@@ -25,4 +25,4 @@ MonoBehaviour:
   bulletAmount: 1
   bulletCooldown: 0
   countMultipleShoots: 0
-  playerModelToSelect: {fileID: 11400000, guid: 99ece367657123b4a8f6b85b84292bea, type: 2}
+  playerModelToSelect: {fileID: 11400000, guid: a60584d4774fce64dbd6d4695d9bb885, type: 2}
