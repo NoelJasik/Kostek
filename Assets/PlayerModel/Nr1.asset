@@ -29,11 +29,12 @@ MonoBehaviour:
   - {fileID: -701823380, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   - {fileID: -2117685497, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   - {fileID: 516374602, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
+  - {fileID: -1560047023, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   hitFrame: {fileID: -1699307186, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   deathFrame: {fileID: 1374007233, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
-  idleCounter: 0.08
+  idleCounter: 0
   walkCounter: 0
   rollCounter: 0
-  idleFrame: 3
-  walkFrame: 0
-  rollFrame: 2
+  idleFrame: 1
+  walkFrame: 3
+  rollFrame: 3

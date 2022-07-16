@@ -50,8 +50,8 @@ public class EnemyBrain : MonoBehaviour
     float MoveSpeedMulti = 1f;
     [SerializeField]
     float JumpCheckRadius = 0.3f;
-    // [SerializeField]
-    // GameObject jumpEffect;
+     [SerializeField]
+     GameObject jumpEffect;
    
 
     float TimerWalk = 0f;
@@ -145,7 +145,7 @@ public class EnemyBrain : MonoBehaviour
                 {
                     RB.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                     jumped = true;
-                    // Instantiate(jumpEffect, new Vector3(transform.position.x, transform.position.y - 0.227f, transform.position.z), transform.rotation);
+                     Instantiate(jumpEffect, new Vector3(transform.position.x, transform.position.y - 0.227f, transform.position.z), transform.rotation);
                     Invoke("jumpReset", jumpCooldown);
 
 
@@ -180,7 +180,7 @@ public class EnemyBrain : MonoBehaviour
                 {
                     RB.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
                     jumped = true;
-                    // Instantiate(jumpEffect, new Vector3(transform.position.x, transform.position.y - 0.227f, transform.position.z), transform.rotation);
+                     Instantiate(jumpEffect, new Vector3(transform.position.x, transform.position.y - 0.227f, transform.position.z), transform.rotation);
                     Invoke("jumpReset", jumpCooldown);
 
                 }

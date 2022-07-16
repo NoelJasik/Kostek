@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4528424308864361451}
   - component: {fileID: 8207547699332256457}
   - component: {fileID: 5601650147922591337}
-  - component: {fileID: 7592422618524149511}
+  - component: {fileID: 8323760416874177463}
   m_Layer: 10
   m_Name: Shell
   m_TagString: Untagged
@@ -76,8 +76,8 @@ MonoBehaviour:
   damageToDeal: 15
   penetrate: 0
   hitEffect: {fileID: 5172423386784939174, guid: 07aecd5343819b1469eec331cd828e41, type: 3}
---- !u!61 &7592422618524149511
-BoxCollider2D:
+--- !u!58 &8323760416874177463
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,19 +89,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.001239419, y: -0.000000014901161}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.37784624, y: 0.13741252}
-  m_EdgeRadius: 0
+  m_Radius: 0.16
 --- !u!1 &6372084098720908711
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6236237943033069852}
   - component: {fileID: 7534102640191763236}
-  - component: {fileID: 7675776178606442428}
+  - component: {fileID: 9048721097200849341}
   m_Layer: 10
   m_Name: BulletSprite
   m_TagString: Untagged
@@ -176,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -206797850, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  m_Sprite: {fileID: -1475636387, guid: ff6f4839661211e4981a41a55c8e7443, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -187,23 +177,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7675776178606442428
-Animator:
-  serializedVersion: 4
+--- !u!114 &9048721097200849341
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6372084098720908711}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f35aada9d55cc8e4b905f33c9ec7b8db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesToChooseFrom:
+  - {fileID: -1475636387, guid: ff6f4839661211e4981a41a55c8e7443, type: 3}
+  - {fileID: -1656688092, guid: ff6f4839661211e4981a41a55c8e7443, type: 3}
+  - {fileID: -279005464, guid: ff6f4839661211e4981a41a55c8e7443, type: 3}

@@ -3360,22 +3360,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 833042878610480891, guid: b20fb5707c161b243a12712facd47447, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 833042878610480891, guid: b20fb5707c161b243a12712facd47447, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 833042878985368214, guid: b20fb5707c161b243a12712facd47447, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 833042878985368214, guid: b20fb5707c161b243a12712facd47447, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 833042879265163731, guid: b20fb5707c161b243a12712facd47447, type: 3}
       propertyPath: ammoCounter
       value: 

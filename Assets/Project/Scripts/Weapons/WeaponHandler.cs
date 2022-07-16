@@ -31,12 +31,15 @@ public class WeaponHandler : MonoBehaviour
 
     [SerializeField]
     Slider reloadCounter;
+    [SerializeField]
+    Player player;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         RollGun();
         reloadCounter.gameObject.SetActive(false);
+        player = FindObjectOfType<Player>();
     }
     void ApplyWeapon(Weapon _weaponToApply)
     {
@@ -49,6 +52,7 @@ public class WeaponHandler : MonoBehaviour
         reloadCounter.maxValue = currentWeapon.reloadCooldown;
         reloadCounter.gameObject.SetActive(false);
         reloading = false;
+        player.currentPlayerModel = currentWeapon.playerModelToSelect;
         currentReloadCooldown = 0;
     }
 

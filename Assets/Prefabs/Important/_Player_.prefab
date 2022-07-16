@@ -281,7 +281,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.314, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -517,7 +517,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.743, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -973,6 +973,7 @@ MonoBehaviour:
   currentReloadCooldown: 0
   currentShootCooldown: 0
   reloadCounter: {fileID: 833042879116657387}
+  player: {fileID: 833042879670533063}
 --- !u!1 &833042879670533060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1011,7 @@ Transform:
   - {fileID: 833042878294513671}
   - {fileID: 833042878485914275}
   - {fileID: 833042879234557214}
+  - {fileID: 7069903349670089919}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1088,7 +1090,9 @@ MonoBehaviour:
   damping: 0.376
   dampingWhenStop: 0.564
   dampingWhenMove: 0.463
+  jumpCloud: {fileID: 9175186450134870302, guid: 0456336199c3ade45ab47033810a1d04, type: 3}
   currentPlayerModel: {fileID: 11400000, guid: 99ece367657123b4a8f6b85b84292bea, type: 2}
+  jumpEffectSpawnTransform: {fileID: 7069903349670089919}
   Sr: {fileID: 833042878790075120}
   dashSlider: {fileID: 833042880212987940}
   Timer: 0
@@ -1240,3 +1244,34 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1700883819257533772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7069903349670089919}
+  m_Layer: 7
+  m_Name: CreateEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7069903349670089919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700883819257533772}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.343, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 833042879670533067}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

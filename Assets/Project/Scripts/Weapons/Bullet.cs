@@ -54,7 +54,7 @@ public class Bullet : MonoBehaviour
             {
                Instantiate(hitEffect, transform.position, transform.rotation);
                 Debug.Log("Registered a Hit");
-               if((!bounce || bounceAmount <= 0) && !penetrate)
+               if((!bounce || bounceAmount <= 0))
                {
                  Debug.Log("Destroy");
                  Destroy(gameObject, 0.01f);

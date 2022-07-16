@@ -28,6 +28,8 @@ public class Weapon : ScriptableObject
 
     public bool countMultipleShoots;
 
+    public PlayerModel playerModelToSelect;
+
 
     void Start()
     {

@@ -59,14 +59,14 @@ public class Player : MonoBehaviour
     BoxCollider2D bc;
     //  [SerializeField]
     // ParticleSystem ps;
-    // [SerializeField]
-    // GameObject jumpCloud;
+     [SerializeField]
+     GameObject jumpCloud;
      [Header("AudioVisual")]
      public PlayerModel currentPlayerModel;
     // [SerializeField]
     // AudioSource DashSound;
-    // [SerializeField]
-    // Transform jumpEffectSpawnTransform;
+    [SerializeField]
+     Transform jumpEffectSpawnTransform;
 
     // [SerializeField]
     // AudioSource jumpSound;
@@ -334,7 +334,7 @@ public class Player : MonoBehaviour
             }
             if (jumpInputTimer > 0 && kayottieTimer > 0)
             {
-                // Instantiate(jumpCloud, jumpEffectSpawnTransform.position, jumpEffectSpawnTransform.rotation);
+                 Instantiate(jumpCloud, jumpEffectSpawnTransform.position, jumpEffectSpawnTransform.rotation);
                 // jumpSound.Play();
                 Rb.velocity = new Vector2(Rb.velocity.x, JumpForce);
                 jumpInputTimer = 0;
