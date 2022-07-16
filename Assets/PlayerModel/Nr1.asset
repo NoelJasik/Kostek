@@ -20,8 +20,8 @@ MonoBehaviour:
   walkFrames:
   - {fileID: 1700703142, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   - {fileID: -1582672135, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
-  - {fileID: 1162742880, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   - {fileID: -645343227, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
+  - {fileID: 1162742880, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   jumpFrames:
   - {fileID: 616498431, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   - {fileID: -887134082, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
@@ -31,3 +31,9 @@ MonoBehaviour:
   - {fileID: 516374602, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   hitFrame: {fileID: -1699307186, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   deathFrame: {fileID: 1374007233, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
+  idleCounter: 0.08
+  walkCounter: 0
+  rollCounter: 0
+  idleFrame: 3
+  walkFrame: 0
+  rollFrame: 2

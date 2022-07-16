@@ -1116,6 +1116,8 @@ MonoBehaviour:
   currentHealth: 3
   canDamage: 1
   playerSpriteRenderer: {fileID: 833042878790075120}
+  deathParticle: {fileID: 6706942558093221343, guid: e52f7a340fa3faf438b8426caaf38ce5, type: 3}
+  levelManager: {fileID: 0}
 --- !u!1 &833042879932626884
 GameObject:
   m_ObjectHideFlags: 0

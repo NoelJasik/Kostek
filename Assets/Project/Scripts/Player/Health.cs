@@ -15,10 +15,16 @@ public class Health : MonoBehaviour
     [SerializeField]
     SpriteRenderer playerSpriteRenderer;
     bool natural;
+    [SerializeField]
+    GameObject deathParticle;
+    [SerializeField]
+    LevelManager levelManager;
+    bool createdDeathParticle = false;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = MaxHealth;
+        levelManager = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -30,7 +36,14 @@ public class Health : MonoBehaviour
         }
         if(currentHealth <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            if(createdDeathParticle == false)
+            {
+                Instantiate(deathParticle, transform.position, transform.rotation);
+            levelManager.LoadSpecificLevel(0);
+            createdDeathParticle = true;
+            }
+
         }
         if(noHitTimer >= 0)
         {
@@ -40,7 +53,7 @@ public class Health : MonoBehaviour
           {
             flash();
           }
-        } else 
+        } else if(currentHealth > 0)
         {
             canDamage = true;
             playerSpriteRenderer.enabled = true;
@@ -49,7 +62,7 @@ public class Health : MonoBehaviour
 
 void flash()
 {
- if(!canDamage)
+ if(!canDamage && currentHealth > 0)
  {
     natural = false;
     playerSpriteRenderer.enabled = !playerSpriteRenderer.enabled;
