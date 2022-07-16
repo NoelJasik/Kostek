@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8207547699332256457}
   - component: {fileID: 5601650147922591337}
   - component: {fileID: 7592422618524149511}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 6236237943033069852}
   - component: {fileID: 7534102640191763236}
   - component: {fileID: 7675776178606442428}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

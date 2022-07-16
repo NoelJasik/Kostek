@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3010229931931684051}
   - component: {fileID: 5236006690208906391}
   - component: {fileID: 287077907668297829}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 8207547699332256457}
   - component: {fileID: 2362310176589576657}
   - component: {fileID: 4147524234696054073}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Card
   m_TagString: Untagged
   m_Icon: {fileID: 0}
