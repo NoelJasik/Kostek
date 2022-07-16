@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
                {
                  Debug.Log("Destroy");
                  other.GetComponent<EnemyHeart>().Damage(damageToDeal);
-                 Destroy(gameObject);
+                 Destroy(gameObject, 0.01f);
                } 
                if(bounce)
                {
@@ -48,7 +48,7 @@ public class Bullet : MonoBehaviour
                if(!bounce || bounceAmount <= 0)
                {
                  Debug.Log("Destroy");
-                 Destroy(gameObject);
+                 Destroy(gameObject, 0.01f);
                } 
                if(bounce)
                {

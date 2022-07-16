@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88f1bddf161ff54f949cd671e684ae1, type: 3}
   m_Name: Rolligun
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4515886340233149114, guid: 1b9c4a7e4bde21141813151438f58bab, type: 3}
+  bullet: {fileID: 4515886340233149114, guid: 83b79978c0156a444b779937432dfc27, type: 3}
   barrelPos: {x: 0.99, y: 0}
   shootCoolDown: 0.5
   reloadCooldown: 2
   weaponSprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
   maxAmmo: 6
   bulletSpeed: 1000
-  bulletSpread: 35
+  bulletSpread: 20
   bulletAmount: 6
   bulletCooldown: 0.05
   countMultipleShoots: 0

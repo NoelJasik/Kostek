@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-[Header("Movement")]
+    Health hp;
+    [Header("Movement")]
     [SerializeField]
 
     float MoveSpeed;
@@ -65,23 +66,23 @@ public class Player : MonoBehaviour
     // AudioSource DashSound;
     // [SerializeField]
     // Transform jumpEffectSpawnTransform;
-   
+
     // [SerializeField]
     // AudioSource jumpSound;
     // float TimerWalk;
-     [SerializeField]
-     SpriteRenderer Sr;
+    [SerializeField]
+    SpriteRenderer Sr;
     // [SerializeField]
     // GameObject footSteps;
-//  [SerializeField]
-//     ParticleSystem DashEffect;
-[SerializeField]
-Slider dashSlider;
+    //  [SerializeField]
+    //     ParticleSystem DashEffect;
+    [SerializeField]
+    Slider dashSlider;
 
 
     [Header("Dashing")]
     WeaponHandler weaponHandler;
-   
+
     private Vector3 MoveDirection;
     [SerializeField]
     float Timer;
@@ -106,6 +107,7 @@ Slider dashSlider;
         // {
         //     jumpSound = GameObject.Find("_Jump_").GetComponent<AudioSource>();
         // }
+        hp = GetComponent<Health>();
         bc = GetComponent<BoxCollider2D>();
         Rb = GetComponent<Rigidbody2D>();
         weaponHandler = FindObjectOfType<WeaponHandler>();
@@ -153,11 +155,11 @@ Slider dashSlider;
         {
             Physics2D.IgnoreLayerCollision(18, 9, false);
             CanMove = true;
-           // DashEffect.Stop();
+            // DashEffect.Stop();
         }
         if (Timer >= 0.22f && !oneTime)
         {
-             weaponHandler.canShoot = true;
+            weaponHandler.canShoot = true;
             Rb.velocity = new Vector2(Rb.velocity.x / 2, Rb.velocity.y / 2);
             Rb.gravityScale = 1f;
             regainDashTimer = 0f;
@@ -175,8 +177,8 @@ Slider dashSlider;
             {
                 regainDashTimer += Time.deltaTime;
             }
-               dashSlider.gameObject.SetActive(true);
-               dashSlider.value = regainDashTimer;
+            dashSlider.gameObject.SetActive(true);
+            dashSlider.value = regainDashTimer;
             // DashBar.SetActive(true);
             // DashBarFill.localScale = new Vector3(regainDashTimer * AmountToMultplyRSToBeOne, 1, 1);
         }
@@ -203,9 +205,10 @@ Slider dashSlider;
             Rb.gravityScale = 0f;
             oneTime = false;
             blockAnim = false;
+            hp.ToggleInvicibility(0.22f);
             // Sr.sprite = skin.DashSprite;
             // ph.CanBeDamaged = false;
-           // DashEffect.Play();
+            // DashEffect.Play();
             CanMove = false;
             Rb.velocity = new Vector2(0, 0);
             if (MoveDirection == new Vector3(0, 0))
