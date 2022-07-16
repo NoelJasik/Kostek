@@ -14,6 +14,8 @@ public class Weapon : ScriptableObject
     public float reloadCooldown;
 
     public Sprite weaponSprite;
+    public Sprite shootSprite;
+    public Sprite reloadSprite;
 
     public int maxAmmo;
 

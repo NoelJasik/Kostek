@@ -48,6 +48,8 @@ public class WeaponHandler : MonoBehaviour
         barrel.localPosition = currentWeapon.barrelPos;
         reloadCounter.maxValue = currentWeapon.reloadCooldown;
         reloadCounter.gameObject.SetActive(false);
+        reloading = false;
+        currentReloadCooldown = 0;
     }
 
     // Update is called once per frame
@@ -63,6 +65,7 @@ public class WeaponHandler : MonoBehaviour
         {
             currentAmmo = currentWeapon.maxAmmo;
             reloadCounter.gameObject.SetActive(false);
+             weaponSpriteRenderer.sprite = currentWeapon.weaponSprite;
             currentReloadCooldown = 0;
             reloading = false;
         }
@@ -90,7 +93,33 @@ public class WeaponHandler : MonoBehaviour
     }
     public void RollGun()
     {
-        ApplyWeapon(weapons[Random.Range(0, weapons.Length)]);
+        Weapon gunToApply = weapons[Random.Range(0, weapons.Length)];
+        while(gunToApply == currentWeapon)
+        {
+            gunToApply = weapons[Random.Range(0, weapons.Length)];
+        }
+        ApplyWeapon(gunToApply);
+    }
+    public void ShootFrame()
+    {
+       weaponSpriteRenderer.sprite = currentWeapon.shootSprite;
+       float delay = currentWeapon.bulletCooldown - currentWeapon.bulletCooldown / 5;
+       if(delay <= 0)
+       {
+        delay = 0.1f;
+       }
+       Invoke("NormalFrame", delay);
+    }
+
+    void NormalFrame()
+    {
+       if(reloading)
+       {
+        weaponSpriteRenderer.sprite = currentWeapon.reloadSprite;
+       } else
+       {
+        weaponSpriteRenderer.sprite = currentWeapon.weaponSprite;
+       }
     }
 
     void Shoot()
@@ -109,8 +138,9 @@ public class WeaponHandler : MonoBehaviour
     }
     void Fire()
     {
-        if (canShoot)
+        if (canShoot && ((currentAmmo > 0 && currentWeapon.countMultipleShoots) || !currentWeapon.countMultipleShoots))
         {
+            ShootFrame();
             barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
             GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
             bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
