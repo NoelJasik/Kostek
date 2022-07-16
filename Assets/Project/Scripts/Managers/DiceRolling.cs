@@ -7,43 +7,48 @@ public class DiceRolling : MonoBehaviour
 {
     public List<int> levelList;
     LevelManager levelManager;
+    bool beated = false;
     // Start is called before the first frame update
     void Start()
     {
         levelManager = FindObjectOfType<LevelManager>();
         for (int i = 1; i <= 6; i++)
         {
-            if(PlayerPrefs.GetString(i + " has been beaten") != "true")
+            if (PlayerPrefs.GetString(i + " has been beaten") != "true")
             {
-              levelList.Add(i);
+                levelList.Add(i);
             }
-            
+
         }
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
-          Invoke("rollLevel", 6f);
+            Invoke("rollLevel", 6f);
         }
     }
 
     public void beatLevel(int _levelToBeat)
     {
-      PlayerPrefs.SetString(_levelToBeat + " has been beaten", "true");
-      levelList.Clear();
-       for (int i = 1; i <= 6; i++)
+        PlayerPrefs.SetString(_levelToBeat + " has been beaten", "true");
+        levelList.Clear();
+        for (int i = 1; i <= 6; i++)
         {
-            if(PlayerPrefs.GetString(i + " has been beaten") != "true")
+            if (PlayerPrefs.GetString(i + " has been beaten") != "true")
             {
-              levelList.Add(i);
+                levelList.Add(i);
             }
-            
+
         }
-        levelManager.LoadSpecificLevel(0);
+        if (beated == false)
+        {
+            levelManager.LoadSpecificLevel(0);
+            beated = true;
+        }
     }
 
     public void rollLevel()
     {
-      int roll = levelList[Random.Range(0, levelList.Count)];
-       Debug.Log(roll);
+        int roll = levelList[Random.Range(0, levelList.Count)];
+        Debug.Log(roll);
         levelManager.LoadSpecificLevel(roll);
 
     }
