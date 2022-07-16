@@ -61,7 +61,8 @@ public class Player : MonoBehaviour
     // ParticleSystem ps;
     // [SerializeField]
     // GameObject jumpCloud;
-    // [Header("AudioVisual")]
+     [Header("AudioVisual")]
+     public PlayerModel currentPlayerModel;
     // [SerializeField]
     // AudioSource DashSound;
     // [SerializeField]
@@ -100,7 +101,7 @@ public class Player : MonoBehaviour
     public float regainDashTimer;
     [SerializeField]
     float AmountToMultplyRSToBeOne;
-
+   
     void Start()
     {
         // if (jumpSound == null)
@@ -151,6 +152,13 @@ public class Player : MonoBehaviour
     {
         Timer += Time.deltaTime;
         MoveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if(Rb.gravityScale == 0)
+        {
+             currentPlayerModel.idleCounter = 0;
+            currentPlayerModel.walkCounter = 0;
+            currentPlayerModel.rollCounter += Time.deltaTime;
+            currentPlayerModel.AnimateSprite(currentPlayerModel.rollFrames, Sr, 0.025f);
+        }
         if (Timer >= 0.20f)
         {
             Physics2D.IgnoreLayerCollision(18, 9, false);
@@ -283,18 +291,19 @@ public class Player : MonoBehaviour
             if (inputX != 0 && !blockAnim)
             {
 
-                //     if (ps.isPlaying == false)
-                //    {
-                //        ps.Play();
-                //     }
+            currentPlayerModel.idleCounter = 0;
+            currentPlayerModel.walkCounter += Time.deltaTime;
+            currentPlayerModel.rollCounter = 0;
+            currentPlayerModel.AnimateSprite(currentPlayerModel.walkFrames, Sr, 0.1f);
 
             }
             else if (!blockAnim)
             {
-
-                // TimerWalk = 0.12f;
-                // Sr.sprite = skin.AfkSprite;
-                //     ps.Stop();
+            currentPlayerModel.idleCounter += Time.deltaTime;
+            currentPlayerModel.walkCounter = 0;
+            currentPlayerModel.rollCounter = 0;
+            currentPlayerModel.AnimateSprite(currentPlayerModel.idleFrames, Sr, 0.1f);
+               
             }
 
 
@@ -316,9 +325,11 @@ public class Player : MonoBehaviour
             if (Input.GetButtonUp("Jump") && Rb.velocity.y > 0)
             {
                 Rb.velocity = new Vector2(Rb.velocity.x, Rb.velocity.y * jumpUnpressMultiply);
+                Sr.sprite = currentPlayerModel.jumpFrames[1];
             }
             if (Grounded && (Rb.velocity.y < 0.0005f && Rb.velocity.y > -0.0005f))
             {
+                blockAnim = false;
                 kayottieTimer = KayottieTime;
             }
             if (jumpInputTimer > 0 && kayottieTimer > 0)
@@ -329,6 +340,18 @@ public class Player : MonoBehaviour
                 jumpInputTimer = 0;
                 kayottieTimer = 0;
             }
+            if(Rb.velocity.y > 0.005f && !Grounded)
+            {
+                blockAnim = true;
+                Sr.sprite = currentPlayerModel.jumpFrames[0];
+            } else if(Rb.velocity.y < -0.005f && !Grounded)
+            {
+                 blockAnim = true;
+                Sr.sprite = currentPlayerModel.jumpFrames[1];
+            } else if(Grounded && (Sr.sprite == currentPlayerModel.jumpFrames[1] || Sr.sprite == currentPlayerModel.jumpFrames[0]))
+            {
+                blockAnim = false;
+            }
         }
 
     }
@@ -336,7 +359,5 @@ public class Player : MonoBehaviour
     {
         blockAnim = false;
     }
-
-
 
 }
