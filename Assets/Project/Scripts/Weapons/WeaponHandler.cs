@@ -6,6 +6,68 @@ using TMPro;
 
 public class WeaponHandler : MonoBehaviour
 {
+// Palę dziesięć jointów dziennie a nie umiem skręcać
+// Pozdrawiam moich przyjaciół bo nie wiem co bez was
+// Trzy dwa jeden zero kurwo skute bobo wjeżdża
+// Skute bobo
+// Palę dziesięć jointów dziennie a nie umiem skręcać
+// Pozdrawiam moich przyjaciół bo nie wiem co bez was
+// Stylówa jeden zero kurwo skute bobo wjeżdża
+// Skute bobo
+// W sumie to prawie nie jaram nie potrafię sam nawet skręcić pacana
+// Raz zajebałem się w akcji spytałem ziomów czy nie chcą iść na pawiana
+// Kiedyś ogoliłem się na Pazdana no i byłem nie do poznania chociaż w sumie Michał i 2 na plecach bo wziąłem se plecak no i poszedłem zajarać
+// Marihuana cała Polska jest w niej zakochana i nie tylko młodzież bo spaliłem z moim dziadkiem grama
+// Każdy kogo znam zjarał chociaż gram zioła
+// Więc nie palę sam no bo po to mam zioma
+// Znowu cały skład wpada na gibona
+// Znowu cali blunt zamiast poldona
+// Na co komu crack ja chcę z bongosa
+// Zjarać cały stuff poco mi feta koda koka
+// Palę dziesięć jointów dziennie a nie umiem skręcać
+// Pozdrawiam moich przyjaciół bo nie wiem co bez was
+// Trzy dwa jeden zero kurwo skute bobo wjeżdża
+// Skute bobo
+// Palę dziesięć jointów dziennie a nie umiem skręcać
+// Pozdrawiam moich przyjaciół bo nie wiem co bez was
+// Trzy dwa jeden zero kurwo skute bobo wjeżdża
+// Skute bobo
+// Raz jak z Orlenka wracałem na schodki
+// Bo chciałem se kupić browara
+// Choć nie miałem nic zjarałem 3 lolki
+// Bo kurwa mogę polegać na fanach
+// Nie odmawiam wiadra no chyba że z rana
+// Ona jest ładna ale najebała się
+// A jak kot i pies czasem jest wódka i marihuana
+// Nie potrafimy się dogadać ej
+// Moja lufka nabita a twoja polana
+// Mała chciałabyś nadawać na tych samych falach
+// No to dawaj zamiana
+// Ty mordo zajeb wodospad jakby zdenerwowała cię Niagara
+// Chciałbym żeby tutaj była Kanada albo Nevada
+// Anglia Holandia Czechy Hiszpania Peru Portugalia
+// Jamajka wiadomo Trynidad Tobago i Malta Paragwaj
+// Floryda Ekwador Szwajcaria
+// Waszyngton Chorwacja i Kanzas i Chile
+// Ile jeszcze mam wymieniać
+// Ekwador Słowenia Australia Urugwaj
+// Od dawna no kurwa nawet jakaś Gruzja pozwala
+// Bermudy wyspy Bergamuty Boliwia
+// A u nas cię czeka sromotna kara
+// Nie kończę jarać
+// Ijo ijo szkoda że muszę spierdalać
+// Za skuna mandat a nie krata
+// Hakuna Matata
+// Nara
+// Palę dziesięć jointów dziennie a nie umiem skręcać
+// Pozdrawiam moich przyjaciół bo nie wiem co bez was
+// Trzy dwa jeden zero kurwo skute bobo wjeżdża
+// Skute bobo
+// Palę dziesięć jointów dziennie a nie umiem skręcać
+// Pozdrawiam moich przyjaciół bo nie wiem co bez was
+// Trzy dwa jeden zero kurwo skute bobo wjeżdża
+// Skute bobo
+
     [SerializeField]
     TextMeshProUGUI ammoCounter;
     [SerializeField]
