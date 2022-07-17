@@ -77,6 +77,7 @@ public class WeaponHandler : MonoBehaviour
     SpriteRenderer weaponSpriteRenderer;
     [SerializeField]
     Transform barrel;
+    AudioSource audioPlayer;
 
     public bool canShoot;
 
@@ -103,6 +104,7 @@ public class WeaponHandler : MonoBehaviour
         RollGun();
         reloadCounter.gameObject.SetActive(false);
         player = FindObjectOfType<Player>();
+        audioPlayer = GetComponent<AudioSource>();
     }
     void ApplyWeapon(Weapon _weaponToApply)
     {
@@ -193,6 +195,7 @@ public class WeaponHandler : MonoBehaviour
     {
         Debug.Log("Bam!");
         currentShootCooldown = currentWeapon.shootCoolDown;
+        audioPlayer.PlayOneShot(currentWeapon.shootSoundEffect);
         for (int i = 0; i < currentWeapon.bulletAmount; i++)
         {
             Invoke("Fire", i * currentWeapon.bulletCooldown);

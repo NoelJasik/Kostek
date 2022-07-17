@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SlotMachine
   m_EditorClassIdentifier: 
   bullet: {fileID: 4515886340233149114, guid: 7aa3f91495c8f5b448cfbca8eb0a0634, type: 3}
+  shootSoundEffect: {fileID: 8300000, guid: 13b828df7c706bc47b63ac99f93a12d2, type: 3}
   barrelPos: {x: 0.99, y: 0}
   shootCoolDown: 0.85
   reloadCooldown: 2

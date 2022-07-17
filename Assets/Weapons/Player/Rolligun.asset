@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rolligun
   m_EditorClassIdentifier: 
   bullet: {fileID: 4515886340233149114, guid: 83b79978c0156a444b779937432dfc27, type: 3}
+  shootSoundEffect: {fileID: 8300000, guid: 02cac14ed47203b459dd61455c8f6f66, type: 3}
   barrelPos: {x: 0.99, y: 0}
   shootCoolDown: 0.5
   reloadCooldown: 2

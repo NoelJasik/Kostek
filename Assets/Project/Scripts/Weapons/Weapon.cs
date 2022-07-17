@@ -7,6 +7,8 @@ public class Weapon : ScriptableObject
 
     public GameObject bullet;
 
+    public AudioClip shootSoundEffect;
+
     public Vector2 barrelPos;
 
     public float shootCoolDown;

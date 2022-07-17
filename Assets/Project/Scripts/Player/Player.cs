@@ -63,8 +63,8 @@ public class Player : MonoBehaviour
      GameObject jumpCloud;
      [Header("AudioVisual")]
      public PlayerModel currentPlayerModel;
-    // [SerializeField]
-    // AudioSource DashSound;
+     [SerializeField]
+     AudioSource DashSound;
     [SerializeField]
      Transform jumpEffectSpawnTransform;
 
@@ -203,7 +203,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetButtonDown("Fire2") && Recharged)
         {
-            // DashSound.Play();
+            DashSound.Play();
             if (MoveDirection.y != 0)
             {
                 Physics2D.IgnoreLayerCollision(18, 9, true);

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Whisky
   m_EditorClassIdentifier: 
   bullet: {fileID: 4515886340233149114, guid: 3bbdd2c2861632b459094fc3f37a161f, type: 3}
+  shootSoundEffect: {fileID: 8300000, guid: e4ad7d97b76633d4cab68cc706e9e76f, type: 3}
   barrelPos: {x: 0.901, y: 0.015}
   shootCoolDown: 0.1
   reloadCooldown: 0.5
