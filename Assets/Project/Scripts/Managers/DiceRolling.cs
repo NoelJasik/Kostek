@@ -10,6 +10,7 @@ public class DiceRolling : MonoBehaviour
     bool beated = false;
     [SerializeField]
     Animator dice;
+    int roll;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class DiceRolling : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
+          roll = levelList[Random.Range(0, levelList.Count)];
+            dice.SetInteger("result", roll);
             Invoke("rollLevel", 6f);
         }
     }
@@ -56,8 +59,7 @@ public class DiceRolling : MonoBehaviour
 
     public void rollLevel()
     {
-        int roll = levelList[Random.Range(0, levelList.Count)];
-        dice.SetInteger("result", roll);
+
         Debug.Log(roll);
         levelManager.LoadSpecificLevel(roll);
 
