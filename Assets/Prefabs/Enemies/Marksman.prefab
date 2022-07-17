@@ -431,7 +431,7 @@ MonoBehaviour:
     m_Bits: 0
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8256
   MoveSpeed: 4
   EscapeMulti: 1.2
   Sr: {fileID: 5296977976860736004}
@@ -442,6 +442,7 @@ MonoBehaviour:
   aiOff: 0
   JumpCheckRadius: 0.5
   jumpEffect: {fileID: 9175186450134870302, guid: 0456336199c3ade45ab47033810a1d04, type: 3}
+  anim: {fileID: 0}
 --- !u!114 &5296977977700238377
 MonoBehaviour:
   m_ObjectHideFlags: 0

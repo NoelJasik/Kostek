@@ -406,7 +406,7 @@ MonoBehaviour:
     m_Bits: 0
   ground:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8256
   MoveSpeed: 5
   EscapeMulti: 1.5
   Sr: {fileID: 1666507533144340898}

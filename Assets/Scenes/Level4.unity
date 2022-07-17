@@ -388,6 +388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelList: 
+  dice: {fileID: 0}
 --- !u!114 &583285420 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8789971726803479985, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
@@ -2703,9 +2704,9 @@ GameObject:
   - component: {fileID: 1347230749}
   - component: {fileID: 1347230748}
   - component: {fileID: 1347230747}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: Platform
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3480,6 +3481,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 343729716, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 226.87494
+      objectReference: {fileID: 0}
+    - target: {fileID: 383934593, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 226.87494
+      objectReference: {fileID: 0}
+    - target: {fileID: 383934593, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -133.67664
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920258834, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 226.87494
+      objectReference: {fileID: 0}
+    - target: {fileID: 1920258834, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -26.73584
+      objectReference: {fileID: 0}
     - target: {fileID: 3982297508042534406, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
