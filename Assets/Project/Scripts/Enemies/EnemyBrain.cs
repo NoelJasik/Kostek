@@ -86,7 +86,7 @@ public class EnemyBrain : MonoBehaviour
     {
 
         isPlayerNear = Physics2D.OverlapCircle(transform.position, Radius, Player);
-        isAbove = transform.position.y > PlayerTransform.transform.position.y + 2;
+        isAbove = transform.position.y > PlayerTransform.transform.position.y + 3.5;
         canShoot = Physics2D.OverlapCircle(transform.position, shootRadius, Player);
         // if (emm.IsBoosted == true)
         // {

@@ -9,6 +9,9 @@ public class LevelManager : MonoBehaviour
 Animator transition;
 [SerializeField]
 float transitionTime = 1f;
+AudioSource ass;
+[SerializeField]
+AudioClip endSound;
 
 public void Awake()
 {
@@ -17,6 +20,8 @@ public void Awake()
     {
 Time.timeScale = 0f;
     }
+    ass = GetComponent<AudioSource>();
+    
 }
 
     public void LoadSpecificLevel(int levelToLoad)
@@ -39,6 +44,7 @@ Time.timeScale = 0f;
 
     IEnumerator LoadLevel(int levelIndexToLoad, float startWaitTime)
     {
+      ass.PlayOneShot(endSound);
         yield return new WaitForSeconds(startWaitTime);
         transition.SetTrigger("End");
 

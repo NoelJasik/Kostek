@@ -421,7 +421,7 @@ MonoBehaviour:
   canShoot: 0
   Radius: 50
   stayRadius: 6
-  shootRadius: 0
+  shootRadius: 30
   walkAwayRadius: 2
   Player:
     serializedVersion: 2

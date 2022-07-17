@@ -15,7 +15,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField]
     float noSpawnRadius;
-       [SerializeField]
+    [SerializeField]
 
     float actualTimer;
 
@@ -24,19 +24,22 @@ public class Spawner : MonoBehaviour
     [SerializeField]
     GameObject[] enemiesToSpawn;
     [SerializeField]
+    Transform[] spawnPoints;
+    [SerializeField]
     GameObject spawnEffect;
+
+    int amountOfBeatenLevels;
 
     // Start is called before the first frame update
 
     float getTime()
     {
-        float value = timeBetweenSpawns + Random.Range(-timeBetweenSpawns / 8, timeBetweenSpawns / 8);
+        float value = timeBetweenSpawns + Random.Range(-timeBetweenSpawns / 5, timeBetweenSpawns / 5);
         Debug.Log(value);
         return value;
     }
     void Start()
     {
-        int amountOfBeatenLevels = 0;
         for (int i = 1; i <= 6; i++)
         {
             if (PlayerPrefs.GetString(i + " has been beaten") == "true")
@@ -45,16 +48,24 @@ public class Spawner : MonoBehaviour
                 Debug.Log("level " + i + " was Beaten");
             }
         }
-        timeBetweenSpawns = timeBetweenSpawns - (timeBetweenSpawns / (8 - amountOfBeatenLevels));
+        timeBetweenSpawns = timeBetweenSpawns - (timeBetweenSpawns / (7 - amountOfBeatenLevels));
         maxAmount = maxAmount + (amountOfBeatenLevels);
-        actualTimer = getTime() / Random.Range(2f, 10f);
+        actualTimer = getTime() / Random.Range(2f, 4f);
     }
     void Update()
     {
         actualTimer -= Time.deltaTime;
-        if (actualTimer <= 0 && !Physics2D.OverlapCircle(transform.position, noSpawnRadius, playerLayer))
+        if (actualTimer <= 0)
         {
-            SpawnEnemy();
+            int amountAtOnce = Random.Range(0, amountOfBeatenLevels);
+            if(amountAtOnce > 3)
+            {
+                amountAtOnce = 3;
+            }
+            for (int i = 0; i <= amountAtOnce; i++)
+            {
+                SpawnEnemy();
+            }
         }
     }
     void SpawnEnemy()
@@ -62,8 +73,15 @@ public class Spawner : MonoBehaviour
         if (FindObjectsOfType<EnemyHeart>().Length < maxAmount)
         {
             Debug.Log(FindObjectsOfType<EnemyHeart>().Length);
-            Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], transform.position, transform.rotation);
-            Instantiate(spawnEffect, transform.position, transform.rotation);
+            Transform spotToCreateAt = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            if (!Physics2D.OverlapCircle(spotToCreateAt.position, noSpawnRadius, playerLayer))
+            {
+                Instantiate(enemiesToSpawn[Random.Range(0, enemiesToSpawn.Length)], spotToCreateAt.position, spotToCreateAt.rotation);
+                Instantiate(spawnEffect, spotToCreateAt.position, spotToCreateAt.rotation);
+            } else
+            {
+                SpawnEnemy();
+            }
         }
 
         actualTimer = getTime();

@@ -28,7 +28,7 @@ public class DiceRolling : MonoBehaviour
         {
           roll = levelList[Random.Range(0, levelList.Count)];
             dice.SetInteger("result", roll);
-            Invoke("rollLevel", 6f);
+            Invoke("rollLevel", 8f);
         }
     }
 

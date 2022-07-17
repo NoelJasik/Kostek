@@ -107,7 +107,7 @@ void flash()
         
         natural = true;
         currentHealth--;
-        noHitTimer = 0.4f;
+        noHitTimer = 1.2f;
      }
     }
 }

@@ -397,7 +397,7 @@ MonoBehaviour:
   Radius: 50
   stayRadius: 30
   shootRadius: 30
-  walkAwayRadius: 5
+  walkAwayRadius: 4.21
   Player:
     serializedVersion: 2
     m_Bits: 128
@@ -408,7 +408,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8256
   MoveSpeed: 5
-  EscapeMulti: 1.5
+  EscapeMulti: 1
   Sr: {fileID: 1666507533144340898}
   ShouldRotate: 1
   jumpForce: 20
