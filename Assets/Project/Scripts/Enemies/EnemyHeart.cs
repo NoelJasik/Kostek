@@ -5,11 +5,17 @@ using UnityEngine;
 public class EnemyHeart : MonoBehaviour
 {
     public float health;
+    WeaponHandler weaponHandler;
+
+    private void Start() {
+        weaponHandler = FindObjectOfType<WeaponHandler>();
+    }
     void Update()
     {
         if(health <= 0)
         {
-            FindObjectOfType<WeaponHandler>().killStreak++;
+            weaponHandler.killStreak++;
+            weaponHandler.totalKills++;
             Destroy(gameObject);
         }
     }

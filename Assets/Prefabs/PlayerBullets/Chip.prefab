@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4528424308864361451}
   - component: {fileID: 8207547699332256457}
   - component: {fileID: 5601650147922591337}
-  - component: {fileID: 7592422618524149511}
+  - component: {fileID: 1093929194582041941}
   m_Layer: 10
   m_Name: Chip
   m_TagString: Untagged
@@ -73,11 +73,12 @@ MonoBehaviour:
   enemyTag: Enemy
   bounce: 0
   bounceAmount: 0
-  damageToDeal: 3
+  damageToDeal: 6
   penetrate: 0
-  hitEffect: {fileID: 5172423386784939174, guid: 07aecd5343819b1469eec331cd828e41, type: 3}
---- !u!61 &7592422618524149511
-BoxCollider2D:
+  hitEffect: {fileID: 5172423386784939174, guid: 602dc65bfe922844f83e835ec737fe86, type: 3}
+  enemyHitEffect: {fileID: 5172423386784939174, guid: 07aecd5343819b1469eec331cd828e41, type: 3}
+--- !u!58 &1093929194582041941
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -89,19 +90,9 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0006982982, y: 0.0016233325}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.08996683, y: 0.1796205}
-  m_EdgeRadius: 0
+  m_Radius: 0.12
 --- !u!1 &6372084098720908711
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1781069434, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  m_Sprite: {fileID: -1117193554, guid: 0142f2b237b20134b9dc45ae686b88b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

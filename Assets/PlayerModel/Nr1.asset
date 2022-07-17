@@ -33,8 +33,8 @@ MonoBehaviour:
   hitFrame: {fileID: -1699307186, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   deathFrame: {fileID: 1374007233, guid: a32d03a637eda0948b2e86167abf2215, type: 3}
   idleCounter: 0
-  walkCounter: 0
+  walkCounter: 0.08
   rollCounter: 0
   idleFrame: 1
-  walkFrame: 3
-  rollFrame: 3
+  walkFrame: 2
+  rollFrame: 1

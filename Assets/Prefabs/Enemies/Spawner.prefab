@@ -44,8 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14552a9e252f5e47945613bf120dfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Amount: 20
-  delay: 10
+  maxAmount: 4
+  timeBetweenSpawns: 20
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  noSpawnRadius: 3
+  delay: 5
   enemiesToSpawn:
   - {fileID: 9132213951795803185, guid: 8491361a09c9f10449cff7b8ec1213a4, type: 3}
   - {fileID: 5296977977700238383, guid: f31b7c1733e10ac4cb1a405ee28d07a3, type: 3}

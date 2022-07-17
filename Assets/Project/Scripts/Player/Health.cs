@@ -21,12 +21,14 @@ public class Health : MonoBehaviour
     LevelManager levelManager;
     bool createdDeathParticle = false;
     WeaponHandler weaponHandler;
+    Player p;
     // Start is called before the first frame update
     void Start()
     {
         weaponHandler = FindObjectOfType<WeaponHandler>();
         currentHealth = MaxHealth;
         levelManager = FindObjectOfType<LevelManager>();
+        p = GetComponent<Player>();
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class Health : MonoBehaviour
             {
                GameObject deathP = Instantiate(deathParticle, transform.position, transform.rotation);
                deathP.GetComponentInChildren<SpriteRenderer>().flipX = playerSpriteRenderer.flipX;
+               deathP.GetComponentInChildren<SpriteRenderer>().sprite = p.currentPlayerModel.deathFrame;
             levelManager.LoadSpecificLevel(0);
             createdDeathParticle = true;
             }
@@ -54,6 +57,9 @@ public class Health : MonoBehaviour
           canDamage = false;
           if(natural)
           {
+            p.blockAnim = true;
+            Invoke("UnblockAnim", 0.2f);
+            playerSpriteRenderer.sprite = p.currentPlayerModel.hitFrame;
             flash();
           }
         } else if(currentHealth > 0)
@@ -61,6 +67,11 @@ public class Health : MonoBehaviour
             canDamage = true;
             playerSpriteRenderer.enabled = true;
         }
+    }
+
+    void UnblockAnim()
+    {
+         p.blockAnim = false;
     }
 
 void flash()

@@ -92,7 +92,7 @@ public class Player : MonoBehaviour
     float DashSpeed;
     bool oneTime;
     public bool Recharged = true;
-    bool blockAnim;
+    public bool blockAnim;
     bool CanMove = true;
     // [SerializeField]
     // GameObject DashBar;
@@ -101,6 +101,9 @@ public class Player : MonoBehaviour
     public float regainDashTimer;
     [SerializeField]
     float AmountToMultplyRSToBeOne;
+
+    bool jumping;
+    
    
     void Start()
     {
@@ -112,6 +115,7 @@ public class Player : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
         Rb = GetComponent<Rigidbody2D>();
         weaponHandler = FindObjectOfType<WeaponHandler>();
+        Sr.sprite = currentPlayerModel.idleFrames[0];
     }
 
     // Update is called once per frame
@@ -288,7 +292,7 @@ public class Player : MonoBehaviour
 
             HorizontalVelocity = Mathf.Clamp(HorizontalVelocity, -MaxMoveSpeed, MaxMoveSpeed);
             Rb.velocity = new Vector2(HorizontalVelocity, Rb.velocity.y);
-            if (inputX != 0 && !blockAnim)
+            if (inputX != 0 && !blockAnim && !jumping)
             {
 
             currentPlayerModel.idleCounter = 0;
@@ -297,7 +301,7 @@ public class Player : MonoBehaviour
             currentPlayerModel.AnimateSprite(currentPlayerModel.walkFrames, Sr, 0.1f);
 
             }
-            else if (!blockAnim)
+            else if (!blockAnim && !jumping)
             {
             currentPlayerModel.idleCounter += Time.deltaTime;
             currentPlayerModel.walkCounter = 0;
@@ -329,7 +333,7 @@ public class Player : MonoBehaviour
             }
             if (Grounded && (Rb.velocity.y < 0.0005f && Rb.velocity.y > -0.0005f))
             {
-                blockAnim = false;
+                jumping = false;
                 kayottieTimer = KayottieTime;
             }
             if (jumpInputTimer > 0 && kayottieTimer > 0)
@@ -340,17 +344,17 @@ public class Player : MonoBehaviour
                 jumpInputTimer = 0;
                 kayottieTimer = 0;
             }
-            if(Rb.velocity.y > 0.005f && !Grounded)
+            if(Rb.velocity.y > 0.005f && !Grounded && !blockAnim)
             {
-                blockAnim = true;
+                jumping = true;
                 Sr.sprite = currentPlayerModel.jumpFrames[0];
-            } else if(Rb.velocity.y < -0.005f && !Grounded)
+            } else if(Rb.velocity.y < -0.005f && !Grounded && !blockAnim)
             {
-                 blockAnim = true;
+                 jumping = true;
                 Sr.sprite = currentPlayerModel.jumpFrames[1];
             } else if(Grounded && (Sr.sprite == currentPlayerModel.jumpFrames[1] || Sr.sprite == currentPlayerModel.jumpFrames[0]))
             {
-                blockAnim = false;
+                jumping = false;
             }
         }
 

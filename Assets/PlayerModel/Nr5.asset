@@ -31,10 +31,10 @@ MonoBehaviour:
   - {fileID: -1053047196, guid: a1480ce0a7efc8441a45ef44c2bd0da0, type: 3}
   - {fileID: -599744270, guid: a1480ce0a7efc8441a45ef44c2bd0da0, type: 3}
   hitFrame: {fileID: 1056892657, guid: a1480ce0a7efc8441a45ef44c2bd0da0, type: 3}
-  deathFrame: {fileID: -325035353, guid: a1480ce0a7efc8441a45ef44c2bd0da0, type: 3}
+  deathFrame: {fileID: -641991035, guid: a1480ce0a7efc8441a45ef44c2bd0da0, type: 3}
   idleCounter: 0
   walkCounter: 0
   rollCounter: 0
-  idleFrame: 0
-  walkFrame: 0
+  idleFrame: 3
+  walkFrame: 2
   rollFrame: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4515886340233149114, guid: f1b13be8e45ce5c46b8bae1b054d4750, type: 3}
   shootSoundEffect: {fileID: 8300000, guid: cfd30d7c0c93a2a4db7c36cc46f8418e, type: 3}
-  barrelPos: {x: 0.99, y: 0}
+  barrelPos: {x: 1.163, y: 0}
   shootCoolDown: 0.2
   reloadCooldown: 1.5
   weaponSprite: {fileID: 1940328932, guid: 81d3deccf8fd1964a9c0b803688b6d45, type: 3}

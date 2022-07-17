@@ -19,7 +19,11 @@ public class Killstreak : MonoBehaviour
     }
     void Update()
     {
-        counter.text = weaponHandler.killStreak.ToString() + "/" + goal.ToString();
+        if (counter != null)
+        {
+            counter.text = weaponHandler.killStreak.ToString() + "/" + goal.ToString();
+        }
+
         if (weaponHandler.killStreak >= goal)
         {
             dr.beatLevel(SceneManager.GetActiveScene().buildIndex);

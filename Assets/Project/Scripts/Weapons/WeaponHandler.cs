@@ -97,6 +97,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField]
     Player player;
     public int killStreak;
+    public int totalKills;
 
     // Start is called before the first frame update
     void Awake()
@@ -139,7 +140,7 @@ public class WeaponHandler : MonoBehaviour
             reloading = false;
         }
         currentShootCooldown -= Time.deltaTime;
-        if (canShoot)
+        if (canShoot && Time.timeScale == 1f)
         {
             weaponSpriteRenderer.enabled = true;
             ammoCounter.text = currentAmmo.ToString() + "/" + currentWeapon.maxAmmo.ToString();
@@ -153,7 +154,7 @@ public class WeaponHandler : MonoBehaviour
                 Reload();
             }
         }
-        else
+        else if(Time.timeScale == 1f)
         {
             weaponSpriteRenderer.enabled = false;
         }

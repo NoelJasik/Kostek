@@ -25,19 +25,22 @@ public class EnemyAimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = enemyPos.position;
-        direction = player.position - transform.position;
-        angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        RB.MoveRotation(Mathf.LerpAngle(RB.rotation, angle, smoothSpeed * Time.deltaTime));
-        if (instant)
+        if (player != null)
         {
-            RB.MoveRotation(angle);
-        }
-        else
-        {
+            transform.position = enemyPos.position;
+            direction = player.position - transform.position;
+            angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             RB.MoveRotation(Mathf.LerpAngle(RB.rotation, angle, smoothSpeed * Time.deltaTime));
-        }
+            if (instant)
+            {
+                RB.MoveRotation(angle);
+            }
+            else
+            {
+                RB.MoveRotation(Mathf.LerpAngle(RB.rotation, angle, smoothSpeed * Time.deltaTime));
+            }
 
+        }
 
 
 

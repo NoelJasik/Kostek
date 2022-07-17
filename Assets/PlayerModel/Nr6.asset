@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da8d96a47cb72449a4f3cee4b646d89, type: 3}
+  m_Name: Nr6
+  m_EditorClassIdentifier: 
+  idleFrames:
+  - {fileID: -249711993, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: 1977008609, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: 499109521, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: 1583691619, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  walkFrames:
+  - {fileID: 588190661, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: -114118291, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: 120168298, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: 481834279, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  jumpFrames:
+  - {fileID: 833144691, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: 1472810708, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  rollFrames:
+  - {fileID: 1605550666, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: -356611492, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: -1151927436, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  - {fileID: 1363479205, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  hitFrame: {fileID: -1985138177, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  deathFrame: {fileID: 326757552, guid: ee03623d73c9fe64190e424779c73a70, type: 3}
+  idleCounter: 0.06
+  walkCounter: 0
+  rollCounter: 0
+  idleFrame: 3
+  walkFrame: 2
+  rollFrame: 2
