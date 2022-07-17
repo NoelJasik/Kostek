@@ -17,13 +17,13 @@ MonoBehaviour:
   barrelPos: {x: 0.99, y: 0}
   shootCoolDown: 0.85
   reloadCooldown: 2
-  weaponSprite: {fileID: -257290364, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
-  shootSprite: {fileID: -257290364, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
-  reloadSprite: {fileID: -257290364, guid: ed94640987ac3c84bbaec6afa28bfa86, type: 3}
+  weaponSprite: {fileID: -195937680, guid: b6cf26c9585f32d43a32b5539c2db507, type: 3}
+  shootSprite: {fileID: 1502307961, guid: b6cf26c9585f32d43a32b5539c2db507, type: 3}
+  reloadSprite: {fileID: -195937680, guid: b6cf26c9585f32d43a32b5539c2db507, type: 3}
   maxAmmo: 3
   bulletSpeed: 1000
   bulletSpread: 30
   bulletAmount: 3
   bulletCooldown: 0.05
   countMultipleShoots: 0
-  playerModelToSelect: {fileID: 11400000, guid: 99ece367657123b4a8f6b85b84292bea, type: 2}
+  playerModelToSelect: {fileID: 11400000, guid: 1b14445bb3bbdc740b57d7afb52b39ca, type: 2}

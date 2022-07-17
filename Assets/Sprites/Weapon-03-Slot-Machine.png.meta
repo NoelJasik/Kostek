@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81d3deccf8fd1964a9c0b803688b6d45
+guid: b6cf26c9585f32d43a32b5539c2db507
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Weapon-05-Cigar-Gun_0
+      name: Weapon-03-Slot-Machine_0
       rect:
         serializedVersion: 2
         x: 0
@@ -130,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5c58b6a159eec24eaeb836a65b1422b
-      internalID: -1444707049
+      spriteID: 29146b107323d1a48a30745116587ca6
+      internalID: 1561257916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon-05-Cigar-Gun_1
+      name: Weapon-03-Slot-Machine_1
       rect:
         serializedVersion: 2
         x: 32
@@ -151,14 +151,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6669dc047b1a0c4fbda04a9e6d4b23f
-      internalID: -1776467698
+      spriteID: 567b3c189fad6d64b8d7ab6c9b17d86b
+      internalID: -1849698962
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon-05-Cigar-Gun_2
+      name: Weapon-03-Slot-Machine_2
       rect:
         serializedVersion: 2
         x: 64
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d33705c89124c6a4f91da8ebb74e33b2
-      internalID: 534828136
+      spriteID: e9e2362d31207c9448f0b14c7632e0d2
+      internalID: -1033137674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon-05-Cigar-Gun_3
+      name: Weapon-03-Slot-Machine_3
       rect:
         serializedVersion: 2
         x: 96
@@ -193,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 902dfdffd562dfe49929b6169f4d4309
-      internalID: 1957930404
+      spriteID: b768123e733d896439df3a42ad6b8ac3
+      internalID: -297467803
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon-05-Cigar-Gun_4
+      name: Weapon-03-Slot-Machine_4
       rect:
         serializedVersion: 2
         x: 128
@@ -214,14 +214,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d703520795aa0d64dae6a026d2588109
-      internalID: 1940328932
+      spriteID: 8b9c51cd8515ad449a04d103c67a8738
+      internalID: 1502307961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Weapon-05-Cigar-Gun_5
+      name: Weapon-03-Slot-Machine_5
       rect:
         serializedVersion: 2
         x: 160
@@ -235,8 +235,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da36003410e5b1a4b8cfa50fa99c27f3
-      internalID: -1440136227
+      spriteID: a97a42e4b9effdf4ca7450d8b58e9d53
+      internalID: 215671838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-03-Slot-Machine_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35ee0802716a8640a5446a9bbf03a2a
+      internalID: 940798926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-03-Slot-Machine_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cb3a1baf285b64cbe93f9977b47be6
+      internalID: -195937680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Weapon-03-Slot-Machine_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026866b0ab47efc42909338600ed9e9c
+      internalID: -2142274880
       vertices: []
       indices: 
       edges: []
@@ -252,12 +315,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Weapon-05-Cigar-Gun_5: -1440136227
-      Weapon-05-Cigar-Gun_0: -1444707049
-      Weapon-05-Cigar-Gun_4: 1940328932
-      Weapon-05-Cigar-Gun_1: -1776467698
-      Weapon-05-Cigar-Gun_2: 534828136
-      Weapon-05-Cigar-Gun_3: 1957930404
+      Weapon-03-Slot-Machine_1: -1849698962
+      Weapon-03-Slot-Machine_0: 1561257916
+      Weapon-03-Slot-Machine_8: -2142274880
+      Weapon-03-Slot-Machine_5: 215671838
+      Weapon-03-Slot-Machine_6: 940798926
+      Weapon-03-Slot-Machine_2: -1033137674
+      Weapon-03-Slot-Machine_4: 1502307961
+      Weapon-03-Slot-Machine_3: -297467803
+      Weapon-03-Slot-Machine_7: -195937680
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
