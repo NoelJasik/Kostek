@@ -13,13 +13,17 @@ MonoBehaviour:
   m_Name: EnemyGun
   m_EditorClassIdentifier: 
   bullet: {fileID: 4515886340233149114, guid: dbf1ac1100a4ce84fb170da628b8422a, type: 3}
-  barrelPos: {x: 0.99, y: 0}
+  shootSoundEffect: {fileID: 8300000, guid: e4ad7d97b76633d4cab68cc706e9e76f, type: 3}
+  barrelPos: {x: 1.001, y: 0}
   shootCoolDown: 1
   reloadCooldown: 1.25
-  weaponSprite: {fileID: 21300000, guid: 017ba3c108d78fe409a528d2206be531, type: 3}
+  weaponSprite: {fileID: -733563793, guid: 2ee6ed306578392438a7fe86032183da, type: 3}
+  shootSprite: {fileID: 796350029, guid: 2ee6ed306578392438a7fe86032183da, type: 3}
+  reloadSprite: {fileID: -733563793, guid: 2ee6ed306578392438a7fe86032183da, type: 3}
   maxAmmo: 1
-  bulletSpeed: 700
+  bulletSpeed: 500
   bulletSpread: 10
   bulletAmount: 1
   bulletCooldown: 0
   countMultipleShoots: 0
+  playerModelToSelect: {fileID: 0}

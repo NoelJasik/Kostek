@@ -14,6 +14,9 @@ public class EnemyAimer : MonoBehaviour
     bool instant;
     [SerializeField]
     Transform enemyPos;
+    [SerializeField]
+    SpriteRenderer gunSprite;
+    bool ShouldFlip;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +42,15 @@ public class EnemyAimer : MonoBehaviour
             {
                 RB.MoveRotation(Mathf.LerpAngle(RB.rotation, angle, smoothSpeed * Time.deltaTime));
             }
-
+                if(angle < 90 && angle > -90)
+        {
+            ShouldFlip = false;
+        }
+         else
+         {
+            ShouldFlip = true;
+         }
+         gunSprite.flipY = ShouldFlip;
         }
 
 

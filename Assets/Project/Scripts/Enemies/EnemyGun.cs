@@ -18,6 +18,8 @@ public class EnemyGun : MonoBehaviour
 
     public float currentShootCooldown;
 
+     AudioSource audioPlayer;
+
 
 
     // Start is called before the first frame update
@@ -26,6 +28,22 @@ public class EnemyGun : MonoBehaviour
         weaponSpriteRenderer.sprite = currentWeapon.weaponSprite;
         currentShootCooldown = currentWeapon.shootCoolDown;
         barrel.localPosition = currentWeapon.barrelPos;
+        audioPlayer = GetComponent<AudioSource>();
+    }
+     public void ShootFrame()
+    {
+       weaponSpriteRenderer.sprite = currentWeapon.shootSprite;
+       float delay = currentWeapon.bulletCooldown - currentWeapon.bulletCooldown / 5;
+       audioPlayer.PlayOneShot(currentWeapon.shootSoundEffect);
+       if(delay <= 0)
+       {
+        delay = 0.1f;
+       }
+       Invoke("NormalFrame", delay);
+    }
+    void NormalFrame()
+    {
+        weaponSpriteRenderer.sprite = currentWeapon.weaponSprite;
     }
 
 
@@ -53,6 +71,7 @@ public class EnemyGun : MonoBehaviour
     }
     void Fire()
     {
+        ShootFrame();
         barrel.localRotation = Quaternion.Euler(barrel.rotation.x, barrel.rotation.z, Random.Range(-currentWeapon.bulletSpread, currentWeapon.bulletSpread));
         GameObject bullet = Instantiate(currentWeapon.bullet, barrel.position, barrel.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(currentWeapon.bulletSpeed * barrel.right);
