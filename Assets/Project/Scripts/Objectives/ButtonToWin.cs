@@ -14,6 +14,10 @@ public class ButtonToWin : MonoBehaviour
     SpriteRenderer sr;
     public int pressValue;
     DiceRolling dr;
+    [SerializeField]
+    AudioClip press;
+    [SerializeField]
+    AudioClip unpress;
     void Start()
     {
         dr = FindObjectOfType<DiceRolling>();
@@ -46,12 +50,17 @@ public class ButtonToWin : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
     if(other.tag == "Player")
     {
+        if(pressValue == 0)
+        {
+            GetComponent<AudioSource>().PlayOneShot(press);
+        }
         CancelInvoke();
         Invoke("unPress", 1.5f);
     }
    }
    void unPress()
    {
+    GetComponent<AudioSource>().PlayOneShot(unpress);
     pressValue = 0;
     sr.sprite = unPressed;
    }

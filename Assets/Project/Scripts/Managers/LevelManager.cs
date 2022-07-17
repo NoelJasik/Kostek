@@ -16,7 +16,7 @@ AudioClip endSound;
 public void Awake()
 {
     transition.gameObject.SetActive(true);
-    if(SceneManager.GetActiveScene().buildIndex != 0)
+    if(SceneManager.GetActiveScene().buildIndex != 0 && SceneManager.GetActiveScene().buildIndex != 7)
     {
 Time.timeScale = 0f;
     }

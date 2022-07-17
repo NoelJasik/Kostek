@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class chipPickup : MonoBehaviour
 {
+    [SerializeField]
+    AudioClip pickupSound;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +22,7 @@ public class chipPickup : MonoBehaviour
         if(other.tag == "Player")
         {
             FindObjectOfType<PicupToWin>().amountOfCoins++;
+            GetComponent<AudioSource>().PlayOneShot(pickupSound);
             Destroy(gameObject);
         }
     }
