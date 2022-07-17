@@ -50,7 +50,7 @@ public class ButtonToWin : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
     if(other.tag == "Player")
     {
-        if(pressValue == 0)
+        if(sr.sprite != pressed)
         {
             GetComponent<AudioSource>().PlayOneShot(press);
         }

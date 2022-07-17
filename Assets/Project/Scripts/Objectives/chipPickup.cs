@@ -22,7 +22,7 @@ public class chipPickup : MonoBehaviour
         if(other.tag == "Player")
         {
             FindObjectOfType<PicupToWin>().amountOfCoins++;
-            GetComponent<AudioSource>().PlayOneShot(pickupSound);
+             FindObjectOfType<PicupToWin>().GetComponent<AudioSource>().PlayOneShot(pickupSound);
             Destroy(gameObject);
         }
     }

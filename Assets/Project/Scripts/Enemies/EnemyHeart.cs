@@ -18,7 +18,7 @@ public class EnemyHeart : MonoBehaviour
         {
             weaponHandler.killStreak++;
             weaponHandler.totalKills++;
-            Destroy(gameObject);
+            Destroy(gameObject, 0.0001f);
         }
     }
     public void Damage(int _amount)
