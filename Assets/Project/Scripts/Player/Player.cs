@@ -67,6 +67,8 @@ public class Player : MonoBehaviour
      AudioSource DashSound;
     [SerializeField]
      Transform jumpEffectSpawnTransform;
+     [SerializeField]
+     AudioSource walkEffect;
 
     // [SerializeField]
     // AudioSource jumpSound;
@@ -299,15 +301,19 @@ public class Player : MonoBehaviour
             currentPlayerModel.walkCounter += Time.deltaTime;
             currentPlayerModel.rollCounter = 0;
             currentPlayerModel.AnimateSprite(currentPlayerModel.walkFrames, Sr, 0.1f);
-
+            walkEffect.gameObject.SetActive(true);
             }
             else if (!blockAnim && !jumping)
             {
+                  walkEffect.gameObject.SetActive(false);
             currentPlayerModel.idleCounter += Time.deltaTime;
             currentPlayerModel.walkCounter = 0;
             currentPlayerModel.rollCounter = 0;
             currentPlayerModel.AnimateSprite(currentPlayerModel.idleFrames, Sr, 0.1f);
                
+            } else
+            {
+                  walkEffect.gameObject.SetActive(false);
             }
 
 

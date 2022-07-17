@@ -57,7 +57,7 @@ public class Health : MonoBehaviour
           if(natural)
           {
             p.blockAnim = true;
-            Invoke("UnblockAnim", 0.2f);
+            Invoke("UnblockAnim", 0.4f);
             playerSpriteRenderer.sprite = p.currentPlayerModel.hitFrame;
             flash();
           }
@@ -106,7 +106,7 @@ void flash()
         
         natural = true;
         currentHealth--;
-        noHitTimer = 1.2f;
+        noHitTimer = 3f;
      }
     }
 }

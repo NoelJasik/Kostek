@@ -22,7 +22,7 @@ MonoBehaviour:
   reloadSprite: {fileID: -195937680, guid: b6cf26c9585f32d43a32b5539c2db507, type: 3}
   maxAmmo: 3
   bulletSpeed: 1000
-  bulletSpread: 30
+  bulletSpread: 15
   bulletAmount: 3
   bulletCooldown: 0.05
   countMultipleShoots: 0

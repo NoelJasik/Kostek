@@ -51,4 +51,8 @@ Time.timeScale = 0f;
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(levelIndexToLoad);
     }
+    public void loadQuick(int _levelIndexToLoad)
+    {
+      SceneManager.LoadScene(_levelIndexToLoad);
+    }
 }

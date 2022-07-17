@@ -11,9 +11,13 @@ public class DiceRolling : MonoBehaviour
     [SerializeField]
     Animator dice;
     int roll;
+    [SerializeField]
+    GameObject[] levelIndicators;
+    [SerializeField]
+    GameObject levelBar;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         levelManager = FindObjectOfType<LevelManager>();
         for (int i = 1; i <= 6; i++)
@@ -21,11 +25,21 @@ public class DiceRolling : MonoBehaviour
             if (PlayerPrefs.GetString(i + " has been beaten") != "true")
             {
                 levelList.Add(i);
+                 levelIndicators[i-1].SetActive(false);
+            } else
+            {
+              levelIndicators[i-1].SetActive(true);
             }
 
         }
+        if(levelList.Count <= 0)
+        {
+          resetLevelData();
+          levelManager.LoadSpecificLevel(7);
+        }
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
+          levelBar.SetActive(true);
           roll = levelList[Random.Range(0, levelList.Count)];
             dice.SetInteger("result", roll);
             Invoke("rollLevel", 8f);
