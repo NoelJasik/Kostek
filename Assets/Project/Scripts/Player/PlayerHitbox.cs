@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerHitbox : MonoBehaviour
 {
     Health hp;
+    [SerializeField]
+    GameObject hitParticle;
     void Start()
     {
         hp = FindObjectOfType<Health>();
@@ -14,6 +16,7 @@ public class PlayerHitbox : MonoBehaviour
         if(other.tag == "Killer" || other.tag == "Enemy")
         {
             hp.Damage();
+            Instantiate(hitParticle, other.transform.position, other.transform.rotation);
         }
     }
 }

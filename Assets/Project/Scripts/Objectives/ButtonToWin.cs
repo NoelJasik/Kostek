@@ -47,7 +47,7 @@ public class ButtonToWin : MonoBehaviour
     if(other.tag == "Player")
     {
         CancelInvoke();
-        Invoke("unPress", 2.5f);
+        Invoke("unPress", 2f);
     }
    }
    void unPress()

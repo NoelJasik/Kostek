@@ -6,9 +6,11 @@ public class EnemyHeart : MonoBehaviour
 {
     public float health;
     WeaponHandler weaponHandler;
+    Animator anim;
 
     private void Start() {
         weaponHandler = FindObjectOfType<WeaponHandler>();
+        anim = GetComponent<Animator>();
     }
     void Update()
     {
@@ -21,6 +23,7 @@ public class EnemyHeart : MonoBehaviour
     }
     public void Damage(int _amount)
     {
+        anim.SetTrigger("Hit");
           health -= _amount;
     }
 }
