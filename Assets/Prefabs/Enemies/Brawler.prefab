@@ -491,7 +491,7 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 8256
-  MoveSpeed: 4
+  MoveSpeed: 2.5
   EscapeMulti: 1.2
   Sr: {fileID: 5130660017564500280}
   ShouldRotate: 1
@@ -502,6 +502,7 @@ MonoBehaviour:
   JumpCheckRadius: 0.5
   jumpEffect: {fileID: 9175186450134870302, guid: 0456336199c3ade45ab47033810a1d04, type: 3}
   anim: {fileID: 0}
+  healthDrop: {fileID: 3296593855917782950, guid: a4c7b423106423e4298f7fa568178ca9, type: 3}
 --- !u!114 &9132213951795803191
 MonoBehaviour:
   m_ObjectHideFlags: 0

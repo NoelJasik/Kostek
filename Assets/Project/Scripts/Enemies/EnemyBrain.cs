@@ -57,6 +57,9 @@ public class EnemyBrain : MonoBehaviour
    
 
     float TimerWalk = 0f;
+    [SerializeField]
+    GameObject healthDrop;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -67,6 +70,18 @@ public class EnemyBrain : MonoBehaviour
      la = gameObject.GetComponentInChildren<EnemyAimer>();
      anim = gameObject.GetComponent<Animator>();
        // emm = GetComponent<EMortalityModule>();
+    }
+
+     void OnDestroy()
+    {
+        if(FindObjectOfType<Health>().currentHealth < 3)
+        {
+            int randomNumber = Random.Range(0, 10);
+            if(randomNumber > 7)
+            {
+Instantiate(healthDrop, transform.position, transform.rotation);
+            }
+        }
     }
 
     void OnDrawGizmos()

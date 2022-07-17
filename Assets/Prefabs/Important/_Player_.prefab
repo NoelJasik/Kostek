@@ -1296,7 +1296,7 @@ MonoBehaviour:
   dashSlider: {fileID: 833042880212987940}
   Timer: 0
   DashTimer: 3
-  DashSpeed: 20
+  DashSpeed: 22
   Recharged: 1
   blockAnim: 0
   regainDashTimer: 0
