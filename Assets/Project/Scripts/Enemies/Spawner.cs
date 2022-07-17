@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField]
-    int maxAmount = 4;
+    int maxAmount = 2;
 
     [SerializeField]
     float timeBetweenSpawns = 20f;

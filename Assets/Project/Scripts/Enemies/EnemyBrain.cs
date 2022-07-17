@@ -52,6 +52,8 @@ public class EnemyBrain : MonoBehaviour
     float JumpCheckRadius = 0.3f;
      [SerializeField]
      GameObject jumpEffect;
+     [SerializeField]
+     Animator anim;
    
 
     float TimerWalk = 0f;
@@ -63,6 +65,7 @@ public class EnemyBrain : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
         PlayerTransform = GameObject.Find("<Player>").gameObject;
      la = gameObject.GetComponentInChildren<EnemyAimer>();
+     anim = gameObject.GetComponent<Animator>();
        // emm = GetComponent<EMortalityModule>();
     }
 
@@ -103,7 +106,9 @@ public class EnemyBrain : MonoBehaviour
             {
                 Sr.flipX = false;
             }
-      
+
+            anim.SetBool("Moving", RB.velocity.x != 0);
+           anim.SetFloat("FallSpeed", RB.velocity.y);
 
         if (walks && !aiOff && RB.gravityScale != 0.06f)
         {

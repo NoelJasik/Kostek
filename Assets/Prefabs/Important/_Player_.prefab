@@ -1279,7 +1279,7 @@ MonoBehaviour:
   GroundCheckPoint: {fileID: 833042879932626887}
   WhatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 8256
   GroundCheckRadius: 0.37
   Grounded: 0
   KayottieTime: 0.1
