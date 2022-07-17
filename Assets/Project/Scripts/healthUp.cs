@@ -6,6 +6,8 @@ public class healthUp : MonoBehaviour
 {
     // [SerializeField]
     // GameObject hpUpEffect;
+    [SerializeField]
+    AudioClip healSound;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,6 +16,7 @@ public class healthUp : MonoBehaviour
             if (other.GetComponent<Health>().currentHealth < other.GetComponent<Health>().MaxHealth)
             {
                 other.GetComponent<Health>().currentHealth++;
+                GetComponent<AudioSource>().PlayOneShot(healSound);
                 Destroy(gameObject);
             }
         }
