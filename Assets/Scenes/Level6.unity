@@ -7044,7 +7044,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 17792
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -8242,23 +8242,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 343729716, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 226.87494
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 383934593, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 226.87494
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 383934593, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -133.67664
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1920258834, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 226.87494
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1920258834, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -26.73584
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3982297508042534406, guid: 92b69e59a75cb7947890af8051aeba1c, type: 3}
       propertyPath: m_AnchorMax.y

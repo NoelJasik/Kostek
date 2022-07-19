@@ -541,7 +541,6 @@ MonoBehaviour:
   JumpCheckRadius: 0.5
   jumpEffect: {fileID: 9175186450134870302, guid: 0456336199c3ade45ab47033810a1d04, type: 3}
   anim: {fileID: 0}
-  healthDrop: {fileID: 3296593855917782950, guid: a4c7b423106423e4298f7fa568178ca9, type: 3}
 --- !u!114 &5296977977700238377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -555,6 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 35
+  hpUp: {fileID: 3296593855917782950, guid: a4c7b423106423e4298f7fa568178ca9, type: 3}
 --- !u!95 &5808436625467364489
 Animator:
   serializedVersion: 4

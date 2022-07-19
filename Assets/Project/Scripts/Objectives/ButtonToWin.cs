@@ -34,6 +34,10 @@ public class ButtonToWin : MonoBehaviour
     {
         pressValue = 1;
         int pressCounter = 0;
+        if(sr.sprite != pressed)
+        {
+            GetComponent<AudioSource>().PlayOneShot(press);
+        }
         sr.sprite = pressed;
         ButtonToWin[] buttons = FindObjectsOfType<ButtonToWin>();
         CancelInvoke();
@@ -50,10 +54,6 @@ public class ButtonToWin : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other) {
     if(other.tag == "Player")
     {
-        if(sr.sprite != pressed)
-        {
-            GetComponent<AudioSource>().PlayOneShot(press);
-        }
         CancelInvoke();
         Invoke("unPress", 1.5f);
     }

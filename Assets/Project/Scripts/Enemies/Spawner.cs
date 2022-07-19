@@ -48,7 +48,7 @@ public class Spawner : MonoBehaviour
                 Debug.Log("level " + i + " was Beaten");
             }
         }
-        timeBetweenSpawns = timeBetweenSpawns - (timeBetweenSpawns / (7 - amountOfBeatenLevels));
+        timeBetweenSpawns = timeBetweenSpawns - (timeBetweenSpawns / (8 - amountOfBeatenLevels));
         maxAmount = maxAmount + (amountOfBeatenLevels);
         actualTimer = getTime() / Random.Range(2f, 4f);
     }

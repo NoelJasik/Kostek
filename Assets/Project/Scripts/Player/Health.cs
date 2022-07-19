@@ -21,13 +21,29 @@ public class Health : MonoBehaviour
     bool createdDeathParticle = false;
     WeaponHandler weaponHandler;
     Player p;
+        [SerializeField]
+    AudioClip healSound;
+    AudioSource playerOfAudio;
     // Start is called before the first frame update
     void Start()
     {
         weaponHandler = FindObjectOfType<WeaponHandler>();
-        currentHealth = MaxHealth;
+       // currentHealth = MaxHealth;
         levelManager = FindObjectOfType<LevelManager>();
+        playerOfAudio = GetComponent<AudioSource>();
         p = GetComponent<Player>();
+         for (int i = 0; i < MaxHealth; i++)
+        {
+            if(i  < currentHealth)
+            {
+                hearts[i].SetActive(true);
+                  Debug.Log(i + " is active");
+            } else
+            {
+                hearts[i].SetActive(false);
+                Debug.Log(i + " isn't active");
+            }
+        }
     }
 
     // Update is called once per frame
@@ -93,20 +109,41 @@ void flash()
      if(canDamage)
      {
         weaponHandler.killStreak = 0;
-        for (int i = 0; i < MaxHealth; i++)
+      for (int i = 0; i < MaxHealth; i++)
         {
-            if(i + 1 < currentHealth)
+            if(i  < currentHealth)
             {
                 hearts[i].SetActive(true);
+                  Debug.Log(i + " is active");
             } else
             {
                 hearts[i].SetActive(false);
+                Debug.Log(i + " isn't active");
             }
         }
         
         natural = true;
         currentHealth--;
         noHitTimer = 3f;
+        canDamage = false;
      }
+    }
+    public void Heal()
+    {
+        Debug.Log("healed");
+        playerOfAudio.PlayOneShot(healSound);
+        currentHealth++;
+         for (int i = 0; i < MaxHealth; i++)
+        {
+            if(i  < currentHealth)
+            {
+                hearts[i].SetActive(true);
+                  Debug.Log(i + " is active");
+            } else
+            {
+                hearts[i].SetActive(false);
+                Debug.Log(i + " isn't active");
+            }
+        }
     }
 }

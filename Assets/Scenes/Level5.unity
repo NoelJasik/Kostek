@@ -6831,7 +6831,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 17792
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -7288,7 +7288,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8538610374760375170, guid: c1208b8aa33d4ee45a1bf28f7a62ba61, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.24
+      value: 3.2399998
       objectReference: {fileID: 0}
     - target: {fileID: 8538610374760375170, guid: c1208b8aa33d4ee45a1bf28f7a62ba61, type: 3}
       propertyPath: m_LocalPosition.z

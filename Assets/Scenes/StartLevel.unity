@@ -280,7 +280,7 @@ Transform:
   - {fileID: 561637932}
   - {fileID: 1320135806}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &519420031 stripped
 Camera:
@@ -5628,7 +5628,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 1408
+    m_Bits: 17792
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
@@ -7649,7 +7649,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5154551231264385402, guid: 4e53b34c9802673468a7ad2552a1c505, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5154551231264385402, guid: 4e53b34c9802673468a7ad2552a1c505, type: 3}
       propertyPath: m_LocalPosition.x

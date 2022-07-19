@@ -38,7 +38,10 @@ Instantiate(enemyHitEffect, transform.position, transform.rotation);
             if((!bounce || bounceAmount <= 0) && !penetrate)
                {
                  Debug.Log("Destroy");
-                 other.GetComponent<EnemyHeart>().Damage(damageToDeal);
+                 if(other.GetComponent<EnemyHeart>() != null)
+                      {
+                        other.GetComponent<EnemyHeart>().Damage(damageToDeal);
+                      }
                 
                  Destroy(gameObject, 0.01f);
 
@@ -47,14 +50,19 @@ Instantiate(enemyHitEffect, transform.position, transform.rotation);
                {
                  Debug.Log("Bounce");
 
-                 other.GetComponent<EnemyHeart>().Damage(damageToDeal);
+                 if(other.GetComponent<EnemyHeart>() != null)
+                      {
+                        other.GetComponent<EnemyHeart>().Damage(damageToDeal);
+                      }
                     rb.velocity = new Vector2(-rb.velocity.x, -rb.velocity.y);
                     bounceAmount--;
                     Instantiate(hitEffect, transform.position, transform.rotation);
                } else if(penetrate)
                {
-
-                      other.GetComponent<EnemyHeart>().Damage(damageToDeal);
+                      if(other.GetComponent<EnemyHeart>() != null)
+                      {
+                        other.GetComponent<EnemyHeart>().Damage(damageToDeal);
+                      }
                }
         }
         for (int i = 0; i < destroyers.Count; i++)

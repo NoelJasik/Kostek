@@ -209,7 +209,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  noSpawnRadius: 3
+  noSpawnRadius: 3.5
   actualTimer: 0
   delay: 5
   enemiesToSpawn:
